@@ -1,12 +1,15 @@
-FixtureFinder.FixtureFilter = function(competition){
+FixtureFinder.FixtureFilter = function(country){
+    if(country == undefined){
+        country = 'all';
+    }
     return {
         include: function(fixture){
-            if(competition === undefined || fixture.competition === competition){
+            if(country === 'all' || fixture.country === country){
                 return true;
             }
         }
     }
-}();
+};
 
 var FixtureRetriever = {
     getFixturesByDate: function(date, filter){
@@ -33,7 +36,7 @@ var FixtureParser = {
         $('.fixtures .fixture').remove();
         $('.fixtures .date strong').text(date);
         $.each(fixtures, function(index, fixture ) {
-            if(filter.include()){
+            if(filter.include(fixture)){
                 $('.fixtures .table').append(FixtureParser.getFixtureAsHTMLElement(fixture, index));
             }
         });
@@ -49,11 +52,16 @@ var FixtureParser = {
         return listElement;
     },
     initialize: function(){
-        $('.country-filter ').on('show.bs.dropdown', function () {
-          // do something…
-        })
-
         var currentDateSelected = new Date();
+
+        $('.country-filter li input').click(function () {
+          FixtureRetriever.getFixturesByDate(
+            FixtureFinder.dateFormatter.formatDate(currentDateSelected),
+            FixtureFinder.FixtureFilter(this.getAttribute('id'))
+          );
+        });
+
+
         $('.fixtures .dateSelect').click(
            function(){
                var offset = this.getAttribute('data-offset');
@@ -66,13 +74,11 @@ var FixtureParser = {
                    currentDateSelected = new Date(dateString);
                }
 
-               FixtureFinder.FixtureFilter($(".competition").selected());
-
                FixtureRetriever.getFixturesByDate(dateString);
            }
         );
 
-        FixtureRetriever.getFixturesByDate( FixtureFinder.dateFormatter.today(), FixtureFinder.FixtureFilter);
+        FixtureRetriever.getFixturesByDate( FixtureFinder.dateFormatter.today(), FixtureFinder.FixtureFilter());
     },
     today: function(){
         return new Date().getFullYear()
