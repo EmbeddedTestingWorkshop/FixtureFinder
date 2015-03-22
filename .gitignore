@@ -9,7 +9,7 @@
 *.ear
 
 # Build and ide folders #
-.idea/
+FixtureFinder/.idea/
 *.iml
 .gradle/
 build/

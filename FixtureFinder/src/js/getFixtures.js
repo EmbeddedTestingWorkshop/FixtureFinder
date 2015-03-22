@@ -1,5 +1,15 @@
+FixtureFinder.FixtureFilter = function(competition){
+    return {
+        include: function(fixture){
+            if(competition === undefined || fixture.competition === competition){
+                return true;
+            }
+        }
+    }
+}();
+
 var FixtureRetriever = {
-    getFixturesByDate: function(date){ 
+    getFixturesByDate: function(date, filter){
         var url = 'http://localhost:8080/fixtures?callback=?';
         $.ajax({
            type: 'GET',
@@ -10,7 +20,7 @@ var FixtureRetriever = {
            contentType: "application/json",
            dataType: 'jsonp',
            success: function(json) {
-               FixtureParser.parseFixtures(json.fixtures, date);
+               FixtureParser.parseFixtures(json.fixtures, date, filter);
            },
            error: function(json) {
                console.log(json.messages);
@@ -19,11 +29,13 @@ var FixtureRetriever = {
     }
 };
 var FixtureParser = {  
-    parseFixtures: function(fixtures, date){
+    parseFixtures: function(fixtures, date, filter){
         $('.fixtures .fixture').remove();
         $('.fixtures .date strong').text(date);
         $.each(fixtures, function(index, fixture ) {
-            $('.fixtures .table').append(FixtureParser.getFixtureAsHTMLElement(fixture, index));
+            if(filter.include()){
+                $('.fixtures .table').append(FixtureParser.getFixtureAsHTMLElement(fixture, index));
+            }
         });
     },
     getFixtureAsHTMLElement: function(fixture, index){
@@ -37,6 +49,10 @@ var FixtureParser = {
         return listElement;
     },
     initialize: function(){
+        $('.country-filter ').on('show.bs.dropdown', function () {
+          // do something…
+        })
+
         var currentDateSelected = new Date();
         $('.fixtures .dateSelect').click(
            function(){
@@ -49,10 +65,14 @@ var FixtureParser = {
                    dateString = FixtureFinder.dateFormatter.formatDateWithOffset(currentDateSelected, offset);
                    currentDateSelected = new Date(dateString);
                }
+
+               FixtureFinder.FixtureFilter($(".competition").selected());
+
                FixtureRetriever.getFixturesByDate(dateString);
            }
         );
-        FixtureRetriever.getFixturesByDate( FixtureFinder.dateFormatter.today() );
+
+        FixtureRetriever.getFixturesByDate( FixtureFinder.dateFormatter.today(), FixtureFinder.FixtureFilter);
     },
     today: function(){
         return new Date().getFullYear()
