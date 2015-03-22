@@ -74,7 +74,8 @@ var FixtureParser = {
                    currentDateSelected = new Date(dateString);
                }
 
-               FixtureRetriever.getFixturesByDate(dateString);
+               var country = $('input[name=country]:checked')[0].id;
+               FixtureRetriever.getFixturesByDate(dateString, FixtureFinder.FixtureFilter(country));
            }
         );
 
