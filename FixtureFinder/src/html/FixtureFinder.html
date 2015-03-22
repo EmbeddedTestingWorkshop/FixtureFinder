@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fixture Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/fixtures.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <h1>Fixture Finder</h1>
+    <div class="container">
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    </div>
+</div>
+
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Filter</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-left form-group" role="filter">
+                    <input type="text" class="form-control" placeholder="Team">
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Country
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">England</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Germany</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Italy</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Spain</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sweden</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Competition
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">England - Premiership</a>
+                            </li>
+                            <!-- poputate with java script -->
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Fixtures
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fixtures</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Results</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="row">
+        <section class="col-sm-7 fixtures">
+            <div class="dateSelectNav">
+                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="-7">Previous Week</button>
+                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="-1">Previous</button>
+                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="0">Today</button>
+                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="1">Next</button>
+                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="7">Next Week</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-condensed table-striped table-hover table-bordered">
+                    <tr class="headers">
+                        <th class="competition">Competition</th>
+                        <th class="kickOffDate">Kick-Off</th>
+                        <th class="home team">Home Team</th>
+                        <th class="score">Score</th>
+                        <th class="away team">Away Team</th>
+                    </tr>
+                    <tr class="date">
+                        <td colspan="5"><strong></strong></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="../js/dateFormatter.js"></script>
+<script src="../js/getFixtures.js"></script>
+<script src="../js/init.js"></script>
+
+</body>
+</html>

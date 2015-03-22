@@ -1,0 +1,36 @@
+.fixtures {
+    border: 1px;
+    margin-left: 1px;
+         }
+         .fixtures h3 {
+           text-align: center; }
+         .fixtures ul {
+           list-style-type: none; }
+         .fixtures th, .fixtures td {
+           text-align: center; }
+         .fixtures .competition {
+            width: 20%;
+          }
+         .fixtures .kickOffDate {
+           width: 20%; }
+         .fixtures .team {
+           width: 30%; }
+         .fixtures .score {
+           width: 10%; }
+         .fixtures .add {
+           width: 10%; }
+         .fixtures .date {
+           background-color: #E5E4E2; }
+         .fixtures .dateSelectNav {
+           text-align: center; }
+         .fixtures .dateSelect {
+           margin: 0px 5px 5px 5px;
+           width: 17.99%; }
+
+       .nextCoupon .input-sm {
+         font-size: 10px; }
+       .nextCoupon .fixture {
+         width: 70%; }
+       .nextCoupon .odds {
+         width: 20%;
+       }

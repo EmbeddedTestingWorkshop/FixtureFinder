@@ -1,0 +1,155 @@
+{
+"messages": [],
+"fixtures": [
+{
+"competition": "England - FA Cup",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Manchester United",
+"awayTeam": "Arsenal",
+"score": "1 - 2"
+},
+{
+"competition": "France - Ligue 2",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Arles-Avignon",
+"awayTeam": "Auxerre",
+"score": "2 - 4"
+},
+{
+"competition": "France - Ligue 2",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Brest",
+"awayTeam": "Chateauroux",
+"score": "3 - 0"
+},
+{
+"competition": "Germany - 2nd Bundesliga",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Karlsruher SC",
+"awayTeam": "RasenBallsport Leipzig",
+"score": "0 - 0"
+},
+{
+"competition": "International - Friendly",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Barbados",
+"awayTeam": "Saint Vincent and The Grenadines",
+"score": "2 - 2"
+},
+{
+"competition": "Italy - Lega Pro:: group B",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "L'Aquila",
+"awayTeam": "Reggiana",
+"score": "0 - 1"
+},
+{
+"competition": "Italy - Serie A",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Juventus",
+"awayTeam": "Sassuolo",
+"score": "1 - 0"
+},
+{
+"competition": "Italy - Serie A",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Lazio",
+"awayTeam": "Fiorentina",
+"score": "4 - 0"
+},
+{
+"competition": "Italy - Serie B",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Entella",
+"awayTeam": "Cittadella",
+"score": "2 - 1"
+},
+{
+"competition": "Netherlands - Jupiler League",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Jong Ajax",
+"awayTeam": "Almere City FC",
+"score": "3 - 1"
+},
+{
+"competition": "Netherlands - Jupiler League",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Jong FC Twente",
+"awayTeam": "NEC Nijmegen",
+"score": "0 - 1"
+},
+{
+"competition": "Netherlands - Jupiler League",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Jong PSV",
+"awayTeam": "Helmond Sport",
+"score": "0 - 0"
+},
+{
+"competition": "Portugal - Primeira Liga",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Rio Ave",
+"awayTeam": "Nacional",
+"score": "1 - 1"
+},
+{
+"competition": "Portugal - Primeira Liga",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Sporting CP",
+"awayTeam": "Penafiel",
+"score": "3 - 2"
+},
+{
+"competition": "Spain - Liga BBVA",
+"kickOff": {
+"date": "2015-03-09",
+"time": "00:00"
+},
+"homeTeam": "Cordoba",
+"awayTeam": "Getafe",
+"score": "1 - 2"
+}
+]
+}
