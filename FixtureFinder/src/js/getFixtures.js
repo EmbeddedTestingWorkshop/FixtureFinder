@@ -1,11 +1,20 @@
-FixtureFinder.FixtureFilter = function(country){
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+FixtureFinder.FixtureFilter = function(country, team){
     if(country == undefined){
         country = 'all';
-    }
+    };
+    if(team == undefined){
+        team = 'all';
+    };
     return {
         include: function(fixture){
             if(country === 'all' || fixture.country === country){
-                return true;
+                 if(team === 'all'
+                    || fixture.homeTeam.toLowerCase().contains(team.toLowerCase())
+                    || fixture.awayTeam.toLowerCase().contains(team.toLowerCase())){
+                        return true;
+                 }
             }
         }
     }
@@ -54,11 +63,23 @@ var FixtureParser = {
     initialize: function(){
         var currentDateSelected = new Date();
 
+        $('.team-filter').keyup(function() {
+            FixtureRetriever.getFixturesByDate(
+                FixtureFinder.dateFormatter.formatDate(currentDateSelected), // date
+                FixtureFinder.FixtureFilter(
+                    $('input[name=country]:checked')[0].id, // country
+                    $('.team-filter')[0].value //team
+                )
+            );
+        });
+
         $('.country-filter li input').click(function () {
           FixtureRetriever.getFixturesByDate(
             FixtureFinder.dateFormatter.formatDate(currentDateSelected),
-            FixtureFinder.FixtureFilter(this.getAttribute('id'))
-          );
+            FixtureFinder.FixtureFilter(
+                this.getAttribute('id'),
+                $('.team-filter')[0].value)
+            )
         });
 
 
@@ -75,7 +96,13 @@ var FixtureParser = {
                }
 
                var country = $('input[name=country]:checked')[0].id;
-               FixtureRetriever.getFixturesByDate(dateString, FixtureFinder.FixtureFilter(country));
+               FixtureRetriever.getFixturesByDate(
+                    dateString, //date
+                    FixtureFinder.FixtureFilter(
+                        country, // country
+                        $('.team-filter')[0].value  //team
+                    )
+               );
            }
         );
 
