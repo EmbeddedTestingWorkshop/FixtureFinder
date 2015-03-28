@@ -1,7 +1,7 @@
 var FixtureParser = function(){
     var getFixtureAsHTMLElement = function(fixture, index){
         var listElement = '<tr class="fixture">';
-            listElement = listElement + '<td class="kickOffDate"> [' +  fixture.country + "] - " + fixture.competition + '</td>';
+            listElement = listElement + '<td class="competition"> <div class="flag flag-'+fixture.country+'"></div>' + fixture.competition + '</td>';
             listElement = listElement + '<td class="kickOffDate"><small>' +  fixture.kickOff.time + '</small></td>';
             listElement = listElement + '<td class="home team"><strong>' + fixture.homeTeam +'</strong></td>';
             listElement = listElement + '<td class="score">' + fixture.score.homeGoals + ':' + fixture.score.awayGoals + '</td>';

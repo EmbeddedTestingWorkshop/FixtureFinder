@@ -24,6 +24,7 @@
 
 .fixtures .competition {
   width: 30%;
+  text-align: left;
 }
 
 .fixtures .kickOffDate {
