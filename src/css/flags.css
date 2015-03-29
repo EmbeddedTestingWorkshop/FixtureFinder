@@ -1,28 +1,73 @@
 .flag {
-	width: 16px;
-	height: 11px;
-	background:url(../html/resources/flags.png) no-repeat;
-	display:inline-block;
-	margin-right:10px;
+    width: 16px;
+    height: 11px;
+    background: url(../html/resources/flags.png) no-repeat;
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.flag.flag-Austria {background-position: -16px 0}
-.flag.flag-Belgium {background-position: -32px 0}
-.flag.flag-Switzerland {background-position: -48px 0}
-.flag.flag-cz {background-position: -64px 0}
-.flag.flag-Germany {background-position: 0 -11px}
-.flag.flag-dk {background-position: -16px -11px}
-.flag.flag-England {background-position: -32px -11px}
-.flag.flag-Spain {background-position: -48px -11px}
-.flag.flag-EURO {background-position: -64px -11px}
-.flag.flag-France {background-position: 0 -22px}
-.flag.flag-gb {background-position: -16px -22px}
-.flag.flag-Greece {background-position: -32px -22px}
-.flag.flag-Italy {background-position: -48px -22px}
-.flag.flag-Netherlands {background-position: -64px -22px}
-.flag.flag-Norway {background-position: 0 -33px}
-.flag.flag-Poland {background-position: -16px -33px}
-.flag.flag-Portugal {background-position: -32px -33px}
-.flag.flag-Russia {background-position: -48px -33px}
-.flag.flag-Scotland {background-position: -64px -33px}
-.flag.flag-Sweden {background-position: 0 -44px}
+.flag.flag-Austria {
+    background-position: -16px 0
+}
+.flag.flag-Belgium {
+    background-position: -32px 0
+}
+.flag.flag-Switzerland {
+    background-position: -48px 0
+}
+.flag.flag-cz {
+    background-position: -64px 0
+}
+.flag.flag-Germany {
+    background-position: 0 -11px
+}
+.flag.flag-dk {
+    background-position: -16px -11px
+}
+.flag.flag-England {
+    background-position: -32px -11px
+}
+.flag.flag-Spain {
+    background-position: -48px -11px
+}
+.flag.flag-EURO {
+    background-position: -64px -11px
+}
+
+.flag.flag-Champions {
+    background-position: -64px -11px
+}
+
+.flag.flag-France {
+    background-position: 0 -22px
+}
+.flag.flag-gb {
+    background-position: -16px -22px
+}
+.flag.flag-Greece {
+    background-position: -32px -22px
+}
+.flag.flag-Italy {
+    background-position: -48px -22px
+}
+.flag.flag-Netherlands {
+    background-position: -64px -22px
+}
+.flag.flag-Norway {
+    background-position: 0 -33px
+}
+.flag.flag-Poland {
+    background-position: -16px -33px
+}
+.flag.flag-Portugal {
+    background-position: -32px -33px
+}
+.flag.flag-Russia {
+    background-position: -48px -33px
+}
+.flag.flag-Scotland {
+    background-position: -64px -33px
+}
+.flag.flag-Sweden {
+    background-position: 0 -44px
+}
