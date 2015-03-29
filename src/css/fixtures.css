@@ -1,11 +1,11 @@
 .main {
-  width:80%
+  width:95%
 }
 
 .fixtures {
   border: 1px;
   margin-left: 1px;
-  width:90%;
+  width:95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -18,7 +18,12 @@
   list-style-type: none;
 }
 
-.fixtures th, .fixtures td {
+.fixtures th  {
+  text-align: center;
+  background-color: #E5E4E2;
+} 
+
+.fixtures td {
   text-align: center;
 }
 
@@ -32,7 +37,7 @@
 }
 
 .fixtures .team {
-  width: 34%;
+  width: 25%;
 }
 
 .fixtures .score {
@@ -44,11 +49,15 @@
 }
 
 .fixtures .date {
-  background-color: #E5E4E2;
+  text-align: center;
+  font-size: 2em;
+  width:30%;
+  margin: 10px auto 10px auto;
 }
 
 .fixtures .dateSelectNav {
   text-align: center;
+  margin: 10px;
 }
 
 .fixtures .dateSelect {

@@ -68,13 +68,17 @@
             </nav>
 
             <div class="dateSelectNav">
-                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="-7">Previous Week</button>
-                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="-1">Previous Day</button>
-                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="0">Today</button>
-                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="1">Next Day</button>
-                <button type="button" class="btn btn-default btn-xs dateSelect" data-offset="7">Next Week</button>
+                <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="-7">Previous Week</button>
+                <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="-1">Previous Day</button>
+                <button type="button" class="btn btn-success btn-xs dateSelect" data-offset="0">Today</button>
+                <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="1">Next Day</button>
+                <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="7">Next Week</button>
             </div>
-
+            
+            <div class="date">
+                <strong></strong>
+             </div>
+            
             <div class="table-responsive">
                 <table class="table table-condensed table-striped table-hover table-bordered">
                     <tr class="headers">
@@ -83,9 +87,6 @@
                         <th class="home team">Home Team</th>
                         <th class="score">Score</th>
                         <th class="away team">Away Team</th>
-                    </tr>
-                    <tr class="date">
-                        <td colspan="5"><strong></strong></td>
                     </tr>
                 </table>
             </div>
