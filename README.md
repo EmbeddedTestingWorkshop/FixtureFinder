@@ -1,9 +1,9 @@
-# AccaChallengeRest
+# Fixture Finder
 
-1 Gradle
-  1.1  Install gradle (if you dont have it): https://gradle.org/
-  1.2. Make sure ${GRADLE_HOME}/bin is on your path
-2. Build
-  2.1. gradle build
-3. Running 
-  2.2. gradle bootRun
+The Fixture finder app uses a separate rest API to access fixtures for a given date and displace their current status.
+
+1. To view the app download as a zip
+2. DO WE NEED TO UPDATE IP for rest endpoint?
+3. open the file ./FixtureFinder/src/html/FixtureFinder.html
+
+
