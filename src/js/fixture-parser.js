@@ -27,11 +27,7 @@ var FixtureParser = function(){
         parseFixtures: function(fixtures, date, filter){
             $('.fixtures .fixture').remove();
             $('.fixtures .date strong').text(moment(date)./*locale('de').*/format(' Do MMMM YYYY ').toString());
-            
-            fixtures = fixtures.filter(filter.byCountry);
-            fixtures = fixtures.filter(filter.byTeam);
-            
-            $.each(fixtures, function(index, fixture ) {
+            $.each(filter(fixtures), function(index, fixture ) {
                $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index)); 
             });
             
