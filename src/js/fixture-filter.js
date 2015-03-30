@@ -5,6 +5,7 @@ FixtureFinder.FixtureFilter = function(country, team){
         return fixture.country === country || country === 'all' ;
     };
 
+    team = team.trim();
     var byTeam = function(fixture){
         return fixture.homeTeam.toLowerCase().contains(team.toLowerCase())
                || fixture.awayTeam.toLowerCase().contains(team.toLowerCase());
