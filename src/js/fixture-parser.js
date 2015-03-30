@@ -24,7 +24,7 @@ var FixtureParser = function(){
     return {
         parseFixtures: function(fixtures, date, filter){
             $('.fixtures .fixture').remove();
-            $('.fixtures .date strong').text(date);
+            $('.fixtures .date strong').text(moment(date)./*locale('de').*/format(' Do MMMM YYYY ').toString());
             $.each(fixtures, function(index, fixture ) {
                 if(filter.include(fixture)){
                     $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));

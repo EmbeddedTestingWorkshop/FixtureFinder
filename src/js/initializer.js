@@ -1,14 +1,17 @@
 var FixtureFinder = {};
 
 FixtureFinder.initializer = function() {
-    var currentDateSelected = new Date();
+    var dateFormat = "YYYY-MM-DD";
+
+    var currentDateSelected = moment().format(dateFormat);
+
     var countryFilterSelector = '.fixtures input[name=country]';
     var teamFilterInput = $('.fixtures .team-filter');
     var dateSelectButtons = $('.fixtures .dateSelect');
 
-    var getFixturesByDate = function() {
+    var getFixturesByDate = function(date) {
         FixtureFinder.FixtureRetriever.getFixturesByDate(
-            FixtureFinder.dateFormatter.formatDate(currentDateSelected),
+            date || moment().format(dateFormat),
             FixtureFinder.FixtureFilter(
                 $(countryFilterSelector + ':checked')[0].id,
                 teamFilterInput[0].value
@@ -20,26 +23,29 @@ FixtureFinder.initializer = function() {
         $(selector)[listenerType](handler);
     };
 
+    var getFixForCurrentDate = function(){
+        getFixturesByDate(currentDateSelected)
+    }
+
     var addListeners = function() {
-        addGetFixturesListener(teamFilterInput, 'keyup', getFixturesByDate);
-        addGetFixturesListener(countryFilterSelector, 'click', getFixturesByDate);
+        addGetFixturesListener(teamFilterInput, 'keyup', getFixForCurrentDate);
+        addGetFixturesListener(countryFilterSelector, 'click', getFixForCurrentDate);
         addGetFixturesListener(dateSelectButtons, 'click',
             function(){
                 var offset = this.getAttribute('data-offset');
                 if(offset === "0"){
-                    currentDateSelected = new Date();
+                    currentDateSelected = moment().format(dateFormat);
                 }else{
-                    var dateString = FixtureFinder.dateFormatter.formatDateWithOffset(currentDateSelected, offset);
-                    currentDateSelected = new Date(dateString);
+                    currentDateSelected = moment(currentDateSelected).add(parseInt(offset), 'days').format("YYYY-MM-DD");
                 }
-                getFixturesByDate()
+                getFixForCurrentDate();
             }
         );
     };
 
     return {
         init: function() {
-            getFixturesByDate();
+            getFixForCurrentDate();
             addListeners();
         }
     }
