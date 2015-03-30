@@ -1,3 +1,5 @@
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
 var FixtureParser = function(){
     var getLocalKickOffTime = function(date, utcTime){
         if(utcTime.indexOf(":") > -1){
@@ -25,11 +27,14 @@ var FixtureParser = function(){
         parseFixtures: function(fixtures, date, filter){
             $('.fixtures .fixture').remove();
             $('.fixtures .date strong').text(moment(date)./*locale('de').*/format(' Do MMMM YYYY ').toString());
+            
+            fixtures = fixtures.filter(filter.byCountry);
+            fixtures = fixtures.filter(filter.byTeam);
+            
             $.each(fixtures, function(index, fixture ) {
-                if(filter.include(fixture)){
-                    $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
-                }
+               $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index)); 
             });
+            
         }
     }
 }();

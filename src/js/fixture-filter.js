@@ -1,21 +1,14 @@
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 FixtureFinder.FixtureFilter = function(country, team){
-    if(country == undefined){
-        country = 'all';
-    };
-    if(team == undefined){
-        team = 'all';
-    };
     return {
-        include: function(fixture){
-            if(country === 'all' || fixture.country === country){
-                 if(team === 'all'
-                    || fixture.homeTeam.toLowerCase().contains(team.toLowerCase())
-                    || fixture.awayTeam.toLowerCase().contains(team.toLowerCase())){
-                        return true;
-                 }
-            }
+        byCountry: function(fixture){
+            return fixture.country === country || country === 'all' ;
+        },
+
+        byTeam: function(fixture){
+            return fixture.homeTeam.toLowerCase().contains(team.toLowerCase())
+                   || fixture.awayTeam.toLowerCase().contains(team.toLowerCase());
         }
     }
 };
