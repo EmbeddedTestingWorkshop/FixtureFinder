@@ -27,10 +27,11 @@ var FixtureParser = function(){
         parseFixtures: function(fixtures, date, filter){
             $('.fixtures .fixture').remove();
             $('.fixtures .date strong').text(moment(date)./*locale('de').*/format(' Do MMMM YYYY ').toString());
-            $.each(filter(fixtures), function(index, fixture ) {
-               $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index)); 
+            var filtered = filter(fixtures);
+            $('.fixtures .results').text(filtered.length +' results');
+            $.each(filtered, function(index, fixture ) {
+               $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
             });
-            
         }
     }
 }();
