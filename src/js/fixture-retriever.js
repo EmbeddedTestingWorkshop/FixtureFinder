@@ -6,7 +6,7 @@ FixtureFinder.FixtureRetriever = {
     },
 
     getFixturesByDate: function(date, filter){
-        var url = 'http://localhost:8080/fixtures?callback=?';
+        var url = 'http://rest-accachallenge.rhcloud.com/fixtures?callback=?';
         $.ajax({
            type: 'GET',
            data: { "date": date },
