@@ -6,6 +6,7 @@ FixtureFinder.initializer = function() {
     var countryFilterSelector = '.fixtures input[name=country]';
     var teamFilterInput = $('.fixtures .team-filter');
     var dateSelectButtons = $('.fixtures .dateSelect');
+    var localizeButtons = $('.localize input[type="radio"]');
     
     var filterFixtures = function() {
         return FixtureFinder.FixtureFilter(
@@ -49,6 +50,9 @@ FixtureFinder.initializer = function() {
                 }
                 getFixturesForCurrentDate();
             }
+        );
+        addGetFixturesListener(localizeButtons, 'click',
+            function(){ FixtureFinder.localize(this.value) }
         );
     };
 
