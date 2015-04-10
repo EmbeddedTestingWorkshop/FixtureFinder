@@ -1,4 +1,5 @@
 FixtureFinder.localize = function(lang){
+    FixtureFinder.currentLanguage = lang;
     var updateDateSelectNav = function(translator){
         var dateSelectNav = $('.dateSelectNav').children()
         $(dateSelectNav[0]).text(translator.firstNavBtn);

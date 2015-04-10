@@ -1,4 +1,6 @@
-var FixtureFinder = {};
+var FixtureFinder = {
+    currentLanguage : 'en'
+};
 
 FixtureFinder.initializer = function() {
     var dateFormat = "YYYY-MM-DD";
