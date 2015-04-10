@@ -5,9 +5,9 @@ FixtureFinder.localize = function(lang){
             case "german":
                 return {
                     firstNavBtn: "Vorige Woche",
-                    secondNavBtn: "Tags Tuvor",
+                    secondNavBtn: "Vorheriger Tag",
                     thirdNavBtn: "Heute",
-                    fourthNavBtn: "Am Nächsten Tag",
+                    fourthNavBtn: "Nächster Tag",
                     fifthNavBtn: "Nächste Woche"
                 }
             case "en":

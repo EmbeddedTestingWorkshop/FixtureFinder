@@ -5,9 +5,9 @@ describe("A Localizer", function() {
       FixtureFinder.localize("de");
 
       expect($($('.dateSelectNav').children()[0]).text()).toEqual("Vorige Woche");
-      expect($($('.dateSelectNav').children()[1]).text()).toEqual("Tags Tuvor");
+      expect($($('.dateSelectNav').children()[1]).text()).toEqual("Vorheriger Tag");
       expect($($('.dateSelectNav').children()[2]).text()).toEqual("Heute");
-      expect($($('.dateSelectNav').children()[3]).text()).toEqual("Am Nächsten Tag");
+      expect($($('.dateSelectNav').children()[3]).text()).toEqual("Nächster Tag");
       expect($($('.dateSelectNav').children()[4]).text()).toEqual("Nächste Woche");
     });
   });
