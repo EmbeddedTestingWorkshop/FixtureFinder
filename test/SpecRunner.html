@@ -25,12 +25,33 @@
 </head>
 
 <body>
-<div class="dateSelectNav" style="display:none">
+<div style="display:none">
+  <div class="dateSelectNav" >
     <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="-7">Previous Week</button>
     <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="-1">Previous Day</button>
     <button type="button" class="btn btn-success btn-xs dateSelect" data-offset="0">Today</button>
     <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="1">Next Day</button>
     <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="7">Next Week</button>
+  </div>
+  <table class="table table-condensed table-striped table-hover table-bordered sortable">
+      <tr class="headers">
+          <th class="competition">
+              <span class="txt">Competition</span>
+          </th>
+          <th class="kickOffDate sorttable_sorted">
+              <span class="txt">Kick-Off</span>
+              <span id="sorttable_sortfwdind">&nbsp;▾</span>
+          </th>
+          <th class="home team">
+              <span class="txt">Home Team</span>
+              </th>
+          <th class="score">
+              <span class="txt">Score</span>
+          <th class="away team">
+              <span class="txt">Away Team</span>
+          </th>
+      </tr>
+  </table>
 </div>
 
 <script src="spec/localize-spec.js"></script>
