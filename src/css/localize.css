@@ -10,7 +10,7 @@
 .localize input[type="radio"]:checked + label > div {
     border: 1px solid red;
     height: 12px;
-    width: 17px;
+    width: 18px;
 }
 
 .localize .flag {
