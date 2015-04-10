@@ -18,6 +18,17 @@ FixtureFinder.localize = function(lang){
         $(headersClass+' .away .txt').text(translator.away);
     };
 
+    var updateDate = function(translator){
+        var dateElement = $('.fixtures .date strong');
+        dateElement.text(
+            moment(
+                dateElement.attr('data-date')
+            ).locale(FixtureFinder.currentLanguage)
+             .format('Do MMMM YYYY')
+        );
+        
+    };
+
     var translator = function(){
         switch(lang){
             case "de":
@@ -52,5 +63,7 @@ FixtureFinder.localize = function(lang){
         }
     }();
     updateDateSelectNav(translator); 
-    updateHeaders(translator);  
+    updateHeaders(translator); 
+    updateDate(translator);
+     
 }

@@ -15,8 +15,9 @@
   
   <!-- include source files here... -->
   <script>var FixtureFinder = {}; </script>
+  <script src="../src/js/lib/moment.min.js"></script>
   <script src="../src/js/fixture-filter.js"></script>
-    <script src="../src/js/localize.js"></script>
+  <script src="../src/js/localize.js"></script>
 
   <!-- include spec files here... -->
   <script src="resources/testFixtureData.js"></script>
@@ -25,7 +26,7 @@
 </head>
 
 <body>
-<div style="display:none">
+<div class="fixtures" style="display:none">
   <div class="dateSelectNav" >
     <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="-7">Previous Week</button>
     <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="-1">Previous Day</button>
@@ -52,6 +53,10 @@
           </th>
       </tr>
   </table>
+  <div class="date">
+    <strong data-date="2015-04-10"> 10th April 2015 </strong>
+    <span class="results">1000 results</span>
+  </div>
 </div>
 
 <script src="spec/localize-spec.js"></script>
