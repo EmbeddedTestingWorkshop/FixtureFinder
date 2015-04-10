@@ -1,4 +1,13 @@
 FixtureFinder.localize = function(lang){
+    var updateDateSelectNav = function(translator){
+        var dateSelectNav = $('.dateSelectNav').children()
+        $(dateSelectNav[0]).text(translator.firstNavBtn);
+        $(dateSelectNav[1]).text(translator.secondNavBtn);
+        $(dateSelectNav[2]).text(translator.thirdNavBtn);
+        $(dateSelectNav[3]).text(translator.fourthNavBtn);
+        $(dateSelectNav[4]).text(translator.fifthNavBtn);
+    };
+    
     var translator = function(){
         switch(lang){
             case "de":
@@ -22,10 +31,5 @@ FixtureFinder.localize = function(lang){
                 }
         }
     }();
-
-    $($('.dateSelectNav').children()[0]).text(translator.firstNavBtn);
-    $($('.dateSelectNav').children()[1]).text(translator.secondNavBtn);
-    $($('.dateSelectNav').children()[2]).text(translator.thirdNavBtn);
-    $($('.dateSelectNav').children()[3]).text(translator.fourthNavBtn);
-    $($('.dateSelectNav').children()[4]).text(translator.fifthNavBtn);
+    updateDateSelectNav(translator);   
 }
