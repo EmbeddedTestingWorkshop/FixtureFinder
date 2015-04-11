@@ -29,6 +29,13 @@ describe("A Localizer", function() {
     it("will translate the word results to German", function() {
       expect($('.fixtures .noOf').text()).toEqual("5 Spiele");
     });
+
+    it("will translate the all country names, inc 'All Countries' to German", function() {
+       checkCountryTextElementsHaveExpectedValue('.all', 'Alle Staaten');
+       checkCountryTextElementsHaveExpectedValue('.en', 'England');
+       checkCountryTextElementsHaveExpectedValue('.de', 'Deutschland');
+       checkCountryTextElementsHaveExpectedValue('.sv', 'Schweden');
+    });
   });
 
   describe("when localize to English", function() {
@@ -57,9 +64,23 @@ describe("A Localizer", function() {
       expect($('.fixtures .date strong').text()).toEqual("9th March 2015");
     });
 
-    it("will translate the word results to German", function() {
+    it("will translate the word results to English", function() {
       expect($('.fixtures .noOf').text()).toEqual("5 fixtures");
     });
+
+    it("will translate the all country names, inc 'All Countries' to English", function() {
+       checkCountryTextElementsHaveExpectedValue('.all', 'All Countries');
+       checkCountryTextElementsHaveExpectedValue('.en', 'England');
+       checkCountryTextElementsHaveExpectedValue('.de', 'Germany');
+       checkCountryTextElementsHaveExpectedValue('.sv', 'Sweden');
+    });
+
   });
+
+  var checkCountryTextElementsHaveExpectedValue = function(country, value){
+     $.each($(country+"-txt"), function(index, element){
+      expect($(element).text()).toEqual(value);
+    });
+  }
 
 });
