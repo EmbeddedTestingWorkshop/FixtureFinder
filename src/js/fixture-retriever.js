@@ -7,7 +7,7 @@ FixtureFinder.FixtureRetriever = {
 
     getFixturesByDate: function(date, filter){
         var url = 'http://rest-accachallenge.rhcloud.com/fixtures/'+date+'?callback=?';
-        $('.spinner').fadeIn(600);
+        $('.spinner').fadeIn(200);
         $.ajax({
            type: 'GET',
            url: url,
@@ -23,7 +23,7 @@ FixtureFinder.FixtureRetriever = {
                console.log(json.messages);
            }
        }).done(function () {
-          $('.spinner').fadeOut(600);
+          $('.spinner').fadeOut(200);
       });
     }
 };
