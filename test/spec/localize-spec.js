@@ -31,10 +31,11 @@ describe("A Localizer", function() {
     });
 
     it("will translate the all country names, inc 'All Countries' to German", function() {
-       checkCountryTextElementsHaveExpectedValue('.all', 'Alle Staaten');
-       checkCountryTextElementsHaveExpectedValue('.en', 'England');
-       checkCountryTextElementsHaveExpectedValue('.de', 'Deutschland');
-       checkCountryTextElementsHaveExpectedValue('.sv', 'Schweden');
+       expect($('.all-txt')[0].innerHTML).toEqual('Alle Staaten');
+       expect($('.all-txt')[1].innerHTML).toEqual('Alle Staaten');
+       expect($('.en-txt').text()).toEqual('England');
+       expect($('.de-txt').text()).toEqual('Deutschland');
+       expect($('.sv-txt').text()).toEqual('Schweden');
     });
   });
 
@@ -69,18 +70,12 @@ describe("A Localizer", function() {
     });
 
     it("will translate the all country names, inc 'All Countries' to English", function() {
-       checkCountryTextElementsHaveExpectedValue('.all', 'All Countries');
-       checkCountryTextElementsHaveExpectedValue('.en', 'England');
-       checkCountryTextElementsHaveExpectedValue('.de', 'Germany');
-       checkCountryTextElementsHaveExpectedValue('.sv', 'Sweden');
+       expect($('.all-txt')[0].innerHTML).toEqual('All Countries');
+       expect($('.all-txt')[1].innerHTML).toEqual('All Countries');
+       expect($('.en-txt').text()).toEqual('England');
+       expect($('.de-txt').text()).toEqual('Germany');
+       expect($('.sv-txt').text()).toEqual('Sweden');
     });
-
   });
-
-  var checkCountryTextElementsHaveExpectedValue = function(country, value){
-     $.each($(country+"-txt"), function(index, element){
-      expect($(element).text()).toEqual(value);
-    });
-  }
 
 });
