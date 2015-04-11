@@ -20,7 +20,8 @@ var localizer = function (){
                     countries: "Staaten",
                     england: "England",
                     germany: "Deutschland",
-                    sweden: "Schweden"
+                    sweden: "Schweden",
+                    filter: "Filtern"
             }
             
             case "en":
@@ -44,8 +45,13 @@ var localizer = function (){
                     england: "England",
                     germany: "Germany",
                     sweden: "Sweden",
+                    filter: "Filter"
                 }
         }
+    };
+
+    var updateNavBarBrand = function(translator){
+        $('.fixtures .navbar-brand').text(translator.filter);
     };
 
     var updateTeamFilter = function(translator){
@@ -96,6 +102,7 @@ var localizer = function (){
     FixtureFinder.localize = function(lang){ 
         FixtureFinder.currentLanguage = lang;
         var localizer = translator(lang);
+        updateNavBarBrand(localizer);
         updateTeamFilter(localizer);
         updateCountryNames(localizer);
         updateDateSelectNav(localizer); 

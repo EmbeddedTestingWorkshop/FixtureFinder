@@ -41,6 +41,10 @@ describe("A Localizer", function() {
     it("will translate the word 'Team' to German", function() {
       expect($('.fixtures .team-filter').attr('placeholder')).toEqual("Mannschaft");
     });
+
+    it("will translate the word 'Filter' to German", function() {
+      expect($('.fixtures .navbar-brand').text()).toEqual("Filtern");
+    });
   });
 
   describe("when localize to English", function() {
@@ -79,6 +83,14 @@ describe("A Localizer", function() {
        expect($('.en-txt').text()).toEqual('England');
        expect($('.de-txt').text()).toEqual('Germany');
        expect($('.sv-txt').text()).toEqual('Sweden');
+    });
+
+    it("will translate the word 'Team' to German", function() {
+      expect($('.fixtures .team-filter').attr('placeholder')).toEqual("Team");
+    });
+    
+    it("will translate the word 'Filter' to German", function() {
+      expect($('.fixtures .navbar-brand').text()).toEqual("Filter");
     });
   });
 
