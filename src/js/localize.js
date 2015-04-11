@@ -14,7 +14,7 @@ var localizer = function (){
                     home: "Heim Mannschaft",
                     score: "Ergebnis",
                     away: "Auswärts Mannschaft",
-                    fixtures: "Spielpaarungen"
+                    fixtures: "Spiele"
                 }
             case "en":
             case "english":

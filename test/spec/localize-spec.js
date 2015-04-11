@@ -27,7 +27,7 @@ describe("A Localizer", function() {
     });
 
     it("will translate the word results to German", function() {
-      expect($('.fixtures .noOf').text()).toEqual("5 Spielpaarungen");
+      expect($('.fixtures .noOf').text()).toEqual("5 Spiele");
     });
   });
 

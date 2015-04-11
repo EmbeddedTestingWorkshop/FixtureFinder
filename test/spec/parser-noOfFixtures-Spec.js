@@ -11,7 +11,7 @@ describe("A Fxiture Parser", function() {
     it("will update the .fixtures .noOf with german text", function() {
       FixtureParser.parseFixtures(testFixtures, "2015-03-09", FixtureFinder.FixtureFilter());
          
-      expect( $('.fixtures .noOf').text()).toEqual("5 Spielpaarungen");
+      expect( $('.fixtures .noOf').text()).toEqual("5 Spiele");
     });
   });
 });
