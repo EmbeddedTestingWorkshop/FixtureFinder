@@ -11,11 +11,13 @@ var localizer = function (){
                     fifthNavBtn: "Nächste Woche",
                     competition: "Wettbewerb",
                     kickOffDate: "Anstoß",
-                    home: "Heim Mannschaft",
+                    home: "Heim",
                     score: "Ergebnis",
-                    away: "Auswärts Mannschaft",
+                    away: "Auswärts",
+                    team: "Mannschaft",
                     fixtures: "Spiele",
-                    allCountries: "Alle Staaten",
+                    all: "Alle",
+                    countries: "Staaten",
                     england: "England",
                     germany: "Deutschland",
                     sweden: "Schweden"
@@ -32,20 +34,26 @@ var localizer = function (){
                     fifthNavBtn: "Next Week",
                     competition: "Competition",
                     kickOffDate: "Kick Off",
-                    home: "Home Team",
+                    home: "Home",
                     score: "Score",
-                    away: "Away Team",
+                    away: "Away",
+                    team: "Team",
                     fixtures: "fixtures",
-                    allCountries: "All Countries",
+                    all: "All",
+                    countries: "Countries",
                     england: "England",
                     germany: "Germany",
-                    sweden: "Sweden"
+                    sweden: "Sweden",
                 }
         }
     };
 
+    var updateTeamFilter = function(translator){
+        $('.fixtures .team-filter').attr('placeholder', translator.team);
+    };
+
     var updateCountryNames = function(translator){
-        $('.all-txt').text(translator.allCountries);
+        $('.all-txt').text(translator.all + " " +translator.countries);
         $('.en-txt').text(translator.england);
         $('.de-txt').text(translator.germany);
         $('.sv-txt').text(translator.sweden);
@@ -64,9 +72,9 @@ var localizer = function (){
         var headersClass = '.table .headers'
         $(headersClass+' .competition .txt').text(translator.competition);
         $(headersClass+' .kickOffDate .txt').text(translator.kickOffDate);
-        $(headersClass+' .home .txt').text(translator.home);
+        $(headersClass+' .home .txt').text(translator.home + " " + translator.team);
         $(headersClass+' .score .txt').text(translator.score);
-        $(headersClass+' .away .txt').text(translator.away);
+        $(headersClass+' .away .txt').text(translator.away + " " + translator.team);
     };
 
     var updateDate = function(lang){
@@ -88,6 +96,7 @@ var localizer = function (){
     FixtureFinder.localize = function(lang){ 
         FixtureFinder.currentLanguage = lang;
         var localizer = translator(lang);
+        updateTeamFilter(localizer);
         updateCountryNames(localizer);
         updateDateSelectNav(localizer); 
         updateHeaders(localizer); 

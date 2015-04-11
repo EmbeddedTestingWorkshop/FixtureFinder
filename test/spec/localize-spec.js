@@ -37,6 +37,10 @@ describe("A Localizer", function() {
        expect($('.de-txt').text()).toEqual('Deutschland');
        expect($('.sv-txt').text()).toEqual('Schweden');
     });
+
+    it("will translate the word 'Team' to German", function() {
+      expect($('.fixtures .team-filter').attr('placeholder')).toEqual("Mannschaft");
+    });
   });
 
   describe("when localize to English", function() {
