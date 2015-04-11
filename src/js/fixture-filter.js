@@ -15,7 +15,6 @@ FixtureFinder.FixtureFilter = function(country, team){
     };
 
     return function(fixtures) {
-        fixtures = fixtures.filter(byCountry);
-        return fixtures.filter(byTeam);
+       return fixtures.filter(byCountry).filter(byTeam);
     }
 };
