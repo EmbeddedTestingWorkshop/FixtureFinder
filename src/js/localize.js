@@ -78,7 +78,7 @@ var localizer = function (){
         updateNoOfFixtures(localizer);
     };
 
-    FixtureFinder.localizeString = function(enValue){
-        return translator(FixtureFinder.currentLanguage)[enValue];
+    FixtureFinder.localizeString = function(value){
+        return translator(FixtureFinder.currentLanguage)[value];
     };
 }()
