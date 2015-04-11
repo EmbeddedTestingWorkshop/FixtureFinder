@@ -78,7 +78,7 @@ describe("A Localizer", function() {
   });
 
   var checkCountryTextElementsHaveExpectedValue = function(country, value){
-     $.each($(checkTextElementsHaveExpectedValue+"-txt"), function(index, element){
+     $.each($(country+"-txt"), function(index, element){
       expect($(element).text()).toEqual(value);
     });
   }
