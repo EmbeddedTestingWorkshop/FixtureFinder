@@ -1,8 +1,8 @@
 describe("A Localizer", function() {
 
-  describe("when localize to German", function() {
+  describe("when localizePage to German", function() {
     beforeEach(function() {
-      FixtureFinder.localize("de");
+      FixtureFinder.localizePage("de");
     });
     
     it("will translate the nav buttons to German", function() {
@@ -47,9 +47,9 @@ describe("A Localizer", function() {
     });
   });
 
-  describe("when localize to English", function() {
+  describe("when localizePage to English", function() {
     beforeEach(function() {
-      FixtureFinder.localize("en");
+      FixtureFinder.localizePage("en");
     });
 
     it("will translate the nav buttons to English", function() {
@@ -97,7 +97,7 @@ describe("A Localizer", function() {
   describe("given locale is set to English", function() {
     
     beforeEach(function() {
-      FixtureFinder.localize("en");
+      FixtureFinder.localizePage("en");
     });
 
     describe("when setDateWithCurrentLanguage with '2015-01-01'", function() {
@@ -135,7 +135,7 @@ describe("A Localizer", function() {
 
   describe("given locale is set to German", function() {   
     beforeEach(function() {
-      FixtureFinder.localize("de");
+      FixtureFinder.localizePage("de");
     });
 
     describe("when setDateWithCurrentLanguage with '2015-04-22'", function() {

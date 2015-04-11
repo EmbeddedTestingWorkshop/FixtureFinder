@@ -97,7 +97,7 @@ var localizer = function (){
         $('.fixtures .noOf').text(originalAsArray[0] +" "+translator.fixtures);
     }
 
-    FixtureFinder.localize = function(lang){ 
+    FixtureFinder.localizePage = function(lang){ 
         FixtureFinder.currentLanguage = lang;
         var localizer = translator(lang);
         updateNavBarBrand(localizer);

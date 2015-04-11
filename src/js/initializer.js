@@ -53,7 +53,7 @@ FixtureFinder.initializer = function() {
             }
         );
         addGetFixturesListener(localizeButtons, 'click',
-            function(){ FixtureFinder.localize(this.value) }
+            function(){ FixtureFinder.localizePage(this.value) }
         );
     };
 
