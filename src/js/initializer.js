@@ -47,7 +47,7 @@ FixtureFinder.initializer = function() {
                 if(offset === "0"){
                     currentDateSelected = moment().format(dateFormat);
                 }else{
-                    currentDateSelected = moment(currentDateSelected).add(parseInt(offset), 'days').format("YYYY-MM-DD");
+                    currentDateSelected = moment(currentDateSelected).add(parseInt(offset), 'days').format(dateFormat);
                 }
                 getFixturesForCurrentDate();
             }
