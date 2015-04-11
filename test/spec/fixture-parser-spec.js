@@ -9,15 +9,15 @@ describe("A FixtureParser", function() {
 
   describe("given a list of fixtures and no filter", function() {
     it("will set the correct text for the number of fixtures", function() {
-      expect($('.fixtures .noOf').text()).toEqual("5 fixtures");
+      expect($('.fixtures .noOf')).toHaveText("5 fixtures");
     });
 
     it("will set the correct date", function() {
-      expect($('.fixtures .date strong').text()).toEqual("9th March 2015");
+      expect($('.fixtures .date strong')).toHaveText("9th March 2015");
     });
 
     it("will add the correct number of fixtures in the table", function() {
-      expect($('.table .fixture').length).toEqual(5);
+      expect($('.table .fixture')).toHaveLength(5);
     });
   });
 });
