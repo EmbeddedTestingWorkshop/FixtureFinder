@@ -12,7 +12,7 @@ describe("A FixtureParser", function() {
       expect($('.fixtures .noOf').text()).toEqual("5 fixtures");
     });
 
-    it("will set the correct text for the date", function() {
+    it("will set the correct date", function() {
       expect($('.fixtures .date strong').text()).toEqual("9th March 2015");
     });
 
