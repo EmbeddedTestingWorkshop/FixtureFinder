@@ -14,13 +14,13 @@ var localizer = function (){
                     home: "Heim Mannschaft",
                     score: "Ergebnis",
                     away: "Auswärts Mannschaft",
-                    fixtures: "Spielpaarungen",
+                    fixtures: "Spiele",
                     allCountries: "Alle Staaten",
                     england: "England",
                     germany: "Deutschland",
                     sweden: "Schweden"
-
-                }
+            }
+            
             case "en":
             case "english":
             default:
