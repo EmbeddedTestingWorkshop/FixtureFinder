@@ -69,14 +69,16 @@ var localizer = function (){
         $('.fixtures .noOf').text(originalAsArray[0] +" "+translator.fixtures);
     }
 
-    FixtureFinder.localize = function(lang){    
-        updateDateSelectNav(translator(lang)); 
-        updateHeaders(translator(lang)); 
+    FixtureFinder.localize = function(lang){ 
+        FixtureFinder.currentLanguage = lang;
+        var localizer = translator(lang);
+        updateDateSelectNav(localizer); 
+        updateHeaders(localizer); 
         updateDate(lang);
-        updateNoOfFixtures(translator(lang));
+        updateNoOfFixtures(localizer);
     };
 
-    FixtureFinder.localizeString = function(str){
-        return translator(FixtureFinder.currentLanguage)[str];
+    FixtureFinder.localizeString = function(enValue){
+        return translator(FixtureFinder.currentLanguage)[enValue];
     };
 }()
