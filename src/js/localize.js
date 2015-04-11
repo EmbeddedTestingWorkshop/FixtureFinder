@@ -29,6 +29,11 @@ FixtureFinder.localize = function(lang){
         
     };
 
+    var updateNoOfFixtures = function(translator){
+        var originalAsArray = $('.fixtures .noOf').text().split(" ");
+        $('.fixtures .noOf').text(originalAsArray[0] +" "+translator.fixtures);
+    }
+
     var translator = function(){
         switch(lang){
             case "de":
@@ -43,7 +48,8 @@ FixtureFinder.localize = function(lang){
                     kickOffDate: "Anstoß",
                     home: "Heim Mannschaft",
                     score: "Ergebnis",
-                    away: "Auswärts Mannschaft"
+                    away: "Auswärts Mannschaft",
+                    fixtures: "Spielpaarungen"
                 }
             case "en":
             case "english":
@@ -58,12 +64,15 @@ FixtureFinder.localize = function(lang){
                     kickOffDate: "Kick Off",
                     home: "Home Team",
                     score: "Score",
-                    away: "Away Team"
+                    away: "Away Team",
+                    fixtures: "fixtures"
                 }
         }
     }();
     updateDateSelectNav(translator); 
     updateHeaders(translator); 
     updateDate(translator);
-     
+    updateNoOfFixtures(translator);
+
+    
 }

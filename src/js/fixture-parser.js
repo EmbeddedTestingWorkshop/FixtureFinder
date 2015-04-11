@@ -30,7 +30,7 @@ var FixtureParser = function(){
             $('.fixtures .date strong').attr("data-date", date);
     
             var filtered = filter(fixtures);
-            $('.fixtures .results').text(filtered.length +' results');
+            $('.fixtures .noOf').text(filtered.length +' fixtures');
             $.each(filtered, function(index, fixture ) {
                $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
             });
