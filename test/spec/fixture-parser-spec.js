@@ -17,10 +17,6 @@ describe("A FixtureParser", function() {
         expect($('.fixtures .noOf').text()).toEqual("5 fixtures");
       });
 
-      it("will set the correct date", function() {
-        expect($('.fixtures .date strong').text()).toEqual("9th March 2015");
-      });
-
       it("will add the correct number of fixtures in the table", function() {
         expect($('.table .fixture').length).toEqual(5);
       });
@@ -51,10 +47,6 @@ describe("A FixtureParser", function() {
     
     it("will update the .fixtures .noOf with german text", function() {
       expect( $('.fixtures .noOf').text()).toEqual("5 Spiele");
-    });
-
-    it("will set the correct date", function() {
-        expect($('.fixtures .date strong').text()).toEqual("9. März 2015");
     });
   });
 });

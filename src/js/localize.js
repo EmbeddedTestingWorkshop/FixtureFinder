@@ -83,15 +83,13 @@ var localizer = function (){
         $(headersClass+' .away .txt').text(translator.away + " " + translator.team);
     };
 
-    var updateDate = function(lang){
+    var updateDate = function(lang, date){
         var dateElement = $('.fixtures .date strong');
         dateElement.text(
-            moment(
-                dateElement.attr('data-date')
-            ).locale(lang)
-             .format('Do MMMM YYYY')
+            moment(date || dateElement.attr('data-date'))
+            .locale(lang)
+            .format('Do MMMM YYYY')
         );
-        
     };
 
     var updateNoOfFixtures = function(translator){
@@ -114,4 +112,8 @@ var localizer = function (){
     FixtureFinder.localizeString = function(value){
         return translator(FixtureFinder.currentLanguage)[value];
     };
+
+    FixtureFinder.setDateWithCurrentLanguage = function(date){
+        updateDate(FixtureFinder.currentLanguage, date);
+    }
 }()

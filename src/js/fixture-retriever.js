@@ -8,6 +8,7 @@ FixtureFinder.FixtureRetriever = {
     getFixturesByDate: function(date, filter){
         var url = 'http://rest-accachallenge.rhcloud.com/fixtures/'+date+'?callback=?';
         $('.spinner').fadeIn(200);
+        FixtureFinder.setDateWithCurrentLanguage(date);
         $.ajax({
            type: 'GET',
            url: url,

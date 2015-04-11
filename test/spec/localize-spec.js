@@ -94,4 +94,64 @@ describe("A Localizer", function() {
     });
   });
 
+  describe("given locale is set to English", function() {
+    
+    beforeEach(function() {
+      FixtureFinder.localize("en");
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-01-01'", function() {
+      it("will set date field to 1st January 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-01-01");
+
+        expect($('.fixtures .date strong').text()).toEqual("1st January 2015");
+      });
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-22-04'", function() {
+      it("will set date field to 22nd April 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
+
+        expect($('.fixtures .date strong').text()).toEqual("22nd April 2015");
+      });
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-03-03'", function() {
+      it("will set date field to 3rd March 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-03-03");
+
+        expect($('.fixtures .date strong').text()).toEqual("3rd March 2015");
+      });
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-29-04'", function() {
+      it("will set date field to 29th April 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-04-29");
+
+        expect($('.fixtures .date strong').text()).toEqual("29th April 2015");
+      });
+    });
+  });  
+
+  describe("given locale is set to German", function() {   
+    beforeEach(function() {
+      FixtureFinder.localize("de");
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-04-22'", function() {
+      it("will set date field to 22. April 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
+
+        expect($('.fixtures .date strong').text()).toEqual("22. April 2015");
+      });
+    });
+
+    describe("when setDateWithCurrentLanguage with '2015-12-01'", function() {
+      it("will set date field to 01. Dezember 2015", function() {
+        FixtureFinder.setDateWithCurrentLanguage("2015-12-01");
+
+        expect($('.fixtures .date strong').text()).toEqual("1. Dezember 2015");
+      });
+    });
+  });  
 });
