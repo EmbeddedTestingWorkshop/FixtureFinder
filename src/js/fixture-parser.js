@@ -25,11 +25,10 @@ var FixtureParser = function(){
 
     return {
         parseFixtures: function(fixtures, filter){
-            $('.fixtures .fixture').remove();
             var filtered = filter(fixtures);
-            
             var localString = FixtureFinder.localizeString("fixtures");
 
+            $('.fixtures .fixture').remove();
             $('.fixtures .noOf').text(filtered.length +' '+localString);
             $.each(filtered, function(index, fixture ) {
                $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
