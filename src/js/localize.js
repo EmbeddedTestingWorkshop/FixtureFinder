@@ -1,40 +1,5 @@
-FixtureFinder.localize = function(lang){
-    FixtureFinder.currentLanguage = lang;
-    var updateDateSelectNav = function(translator){
-        var dateSelectNav = $('.dateSelectNav').children()
-        $(dateSelectNav[0]).text(translator.firstNavBtn);
-        $(dateSelectNav[1]).text(translator.secondNavBtn);
-        $(dateSelectNav[2]).text(translator.thirdNavBtn);
-        $(dateSelectNav[3]).text(translator.fourthNavBtn);
-        $(dateSelectNav[4]).text(translator.fifthNavBtn);
-    };
-      
-    var updateHeaders = function(translator){
-        var headersClass = '.table .headers'
-        $(headersClass+' .competition .txt').text(translator.competition);
-        $(headersClass+' .kickOffDate .txt').text(translator.kickOffDate);
-        $(headersClass+' .home .txt').text(translator.home);
-        $(headersClass+' .score .txt').text(translator.score);
-        $(headersClass+' .away .txt').text(translator.away);
-    };
-
-    var updateDate = function(translator){
-        var dateElement = $('.fixtures .date strong');
-        dateElement.text(
-            moment(
-                dateElement.attr('data-date')
-            ).locale(FixtureFinder.currentLanguage)
-             .format('Do MMMM YYYY')
-        );
-        
-    };
-
-    var updateNoOfFixtures = function(translator){
-        var originalAsArray = $('.fixtures .noOf').text().split(" ");
-        $('.fixtures .noOf').text(originalAsArray[0] +" "+translator.fixtures);
-    }
-
-    var translator = function(){
+var localizer = function (){
+    var translator = function(lang){
         switch(lang){
             case "de":
             case "german":
@@ -68,11 +33,50 @@ FixtureFinder.localize = function(lang){
                     fixtures: "fixtures"
                 }
         }
-    }();
-    updateDateSelectNav(translator); 
-    updateHeaders(translator); 
-    updateDate(translator);
-    updateNoOfFixtures(translator);
+    };
 
-    
-}
+    var updateDateSelectNav = function(translator){
+        var dateSelectNav = $('.dateSelectNav').children()
+        $(dateSelectNav[0]).text(translator.firstNavBtn);
+        $(dateSelectNav[1]).text(translator.secondNavBtn);
+        $(dateSelectNav[2]).text(translator.thirdNavBtn);
+        $(dateSelectNav[3]).text(translator.fourthNavBtn);
+        $(dateSelectNav[4]).text(translator.fifthNavBtn);
+    };
+      
+    var updateHeaders = function(translator){
+        var headersClass = '.table .headers'
+        $(headersClass+' .competition .txt').text(translator.competition);
+        $(headersClass+' .kickOffDate .txt').text(translator.kickOffDate);
+        $(headersClass+' .home .txt').text(translator.home);
+        $(headersClass+' .score .txt').text(translator.score);
+        $(headersClass+' .away .txt').text(translator.away);
+    };
+
+    var updateDate = function(lang){
+        var dateElement = $('.fixtures .date strong');
+        dateElement.text(
+            moment(
+                dateElement.attr('data-date')
+            ).locale(lang)
+             .format('Do MMMM YYYY')
+        );
+        
+    };
+
+    var updateNoOfFixtures = function(translator){
+        var originalAsArray = $('.fixtures .noOf').text().split(" ");
+        $('.fixtures .noOf').text(originalAsArray[0] +" "+translator.fixtures);
+    }
+
+    FixtureFinder.localize = function(lang){    
+        updateDateSelectNav(translator(lang)); 
+        updateHeaders(translator(lang)); 
+        updateDate(lang);
+        updateNoOfFixtures(translator(lang));
+    };
+
+    FixtureFinder.localizeString = function(str){
+        return translator(FixtureFinder.currentLanguage)[str];
+    };
+}()
