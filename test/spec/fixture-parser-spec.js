@@ -46,12 +46,15 @@ describe("A FixtureParser", function() {
     beforeEach(function() {
       testFixtures = testFixtureData;
       FixtureFinder.currentLanguage = 'de';
+      FixtureParser.parseFixtures(testFixtures, FixtureFinder.FixtureFilter(), "2015-03-09");
     });
     
     it("will update the .fixtures .noOf with german text", function() {
-      FixtureParser.parseFixtures(testFixtures, FixtureFinder.FixtureFilter(), "2015-03-09");
-         
       expect( $('.fixtures .noOf').text()).toEqual("5 Spiele");
+    });
+
+    it("will set the correct date", function() {
+        expect($('.fixtures .date strong').text()).toEqual("9. März 2015");
     });
   });
 });
