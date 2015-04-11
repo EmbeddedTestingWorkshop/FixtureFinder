@@ -29,6 +29,53 @@
 
 <body>
 <div class="fixtures" style="display:none">
+ <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Filter</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-form navbar-left form-group" role="filter">
+                <input type="text " class="form-control team-filter" placeholder="Team">
+            </div>
+            <div class="navbar-form  btn-group">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                    <span class="all-txt">All Countries</span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu country-filter">
+                    <li>
+                        <input type="radio" id="all" name="country" value="0" checked>
+                        <label for="all"><span class="all-txt">All Countries</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="England" name="country" value="1">
+                        <label for="England"><div class="flag flag-England"></div><span class="en-txt">England</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="Germany" name="country" value="2">
+                        <label for="Germany"><div class="flag flag-Germany"></div><span class="de-txt">Germany</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="Sweden" name="country" value="3">
+                        <label for="Sweden"><div class="flag flag-Sweden"></div><span class="sv-txt">Sweden</span></label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
   <div class="dateSelectNav" >
     <button type="button" class="btn btn-primary btn-xs dateSelect" data-offset="-7">Previous Week</button>
     <button type="button" class="btn btn-info btn-xs dateSelect" data-offset="-1">Previous Day</button>

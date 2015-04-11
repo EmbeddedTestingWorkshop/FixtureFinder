@@ -14,7 +14,12 @@ var localizer = function (){
                     home: "Heim Mannschaft",
                     score: "Ergebnis",
                     away: "Auswärts Mannschaft",
-                    fixtures: "Spielpaarungen"
+                    fixtures: "Spielpaarungen",
+                    allCountries: "Alle Staaten",
+                    england: "England",
+                    germany: "Deutschland",
+                    sweden: "Schweden"
+
                 }
             case "en":
             case "english":
@@ -30,9 +35,20 @@ var localizer = function (){
                     home: "Home Team",
                     score: "Score",
                     away: "Away Team",
-                    fixtures: "fixtures"
+                    fixtures: "fixtures",
+                    allCountries: "All Countries",
+                    england: "England",
+                    germany: "Germany",
+                    sweden: "Sweden"
                 }
         }
+    };
+
+    var updateCountryNames = function(translator){
+        $('.all-txt').text(translator.allCountries);
+        $('.en-txt').text(translator.england);
+        $('.de-txt').text(translator.germany);
+        $('.sv-txt').text(translator.sweden);
     };
 
     var updateDateSelectNav = function(translator){
@@ -72,6 +88,7 @@ var localizer = function (){
     FixtureFinder.localize = function(lang){ 
         FixtureFinder.currentLanguage = lang;
         var localizer = translator(lang);
+        updateCountryNames(localizer);
         updateDateSelectNav(localizer); 
         updateHeaders(localizer); 
         updateDate(lang);
