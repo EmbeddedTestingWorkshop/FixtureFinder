@@ -24,9 +24,8 @@ FixtureFinder.initializer = function() {
         );
     };
 
-    var filterFixturesOfCurrentDate = function(){
+    var filterCurrentFixtureList = function(){
         FixtureFinder.FixtureRetriever.getRetrievedFixtures(
-            currentDateSelected,
             filterFixtures() 
         );
     };
@@ -40,8 +39,8 @@ FixtureFinder.initializer = function() {
     };
     
     var addListeners = function() {
-        addGetFixturesListener(teamFilterInput, 'keyup', filterFixturesOfCurrentDate);
-        addGetFixturesListener(countryFilterSelector, 'click', filterFixturesOfCurrentDate);
+        addGetFixturesListener(teamFilterInput, 'keyup', filterCurrentFixtureList);
+        addGetFixturesListener(countryFilterSelector, 'click', filterCurrentFixtureList);
         addGetFixturesListener(dateSelectButtons, 'click',
             function(){
                 var offset = this.getAttribute('data-offset');

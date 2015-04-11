@@ -24,11 +24,13 @@ var FixtureParser = function(){
     };
 
     return {
-        parseFixtures: function(fixtures, date, filter){
+        parseFixtures: function(fixtures, filter, date){
+            if(date) {
+                $('.fixtures .date strong').attr("data-date", date);
+                $('.fixtures .date strong').text(moment(date).locale(FixtureFinder.currentLanguage).format('Do MMMM YYYY').toString());
+            }
+
             $('.fixtures .fixture').remove();
-            $('.fixtures .date strong').text(moment(date).locale(FixtureFinder.currentLanguage).format('Do MMMM YYYY').toString());
-            $('.fixtures .date strong').attr("data-date", date);
-    
             var filtered = filter(fixtures);
             
             var localString = FixtureFinder.localizeString("fixtures");

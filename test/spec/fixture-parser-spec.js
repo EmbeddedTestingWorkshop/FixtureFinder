@@ -8,7 +8,7 @@ describe("A FixtureParser", function() {
 
   describe("given a list of fixtures and no filter", function() {
     beforeEach(function() {
-      FixtureParser.parseFixtures(testFixtures, "2015-03-09", FixtureFinder.FixtureFilter());    
+      FixtureParser.parseFixtures(testFixtures, FixtureFinder.FixtureFilter(), "2015-03-09");    
     });
 
     it("will set the number of fixtures", function() {
@@ -27,13 +27,13 @@ describe("A FixtureParser", function() {
   describe("given a list of fixtures with a filter for Arsenal", function() {
     beforeEach(function() {
       filter = FixtureFinder.FixtureFilter("all", "arsenal");
-      FixtureParser.parseFixtures(testFixtures, "2015-03-09", filter);    
+      FixtureParser.parseFixtures(testFixtures, filter, "2015-03-09");    
     });
     
     // seems to be necessary to avoid side effects
     afterEach(function() {
       filter = FixtureFinder.FixtureFilter();
-      FixtureParser.parseFixtures(testFixtures, "2015-03-09", filter);    
+      FixtureParser.parseFixtures(testFixtures, filter, "2015-03-09");    
     });
 
     it("will set the correct number of filtered fixtures", function() {

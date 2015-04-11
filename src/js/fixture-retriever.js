@@ -1,8 +1,8 @@
 FixtureFinder.FixtureRetriever = {
     fixtures: [],
 
-    getRetrievedFixtures: function(date, filter) {
-        FixtureParser.parseFixtures(fixtures, date, filter);
+    getRetrievedFixtures: function(filter) {
+        FixtureParser.parseFixtures(fixtures, filter);
     },
 
     getFixturesByDate: function(date, filter){
@@ -17,7 +17,7 @@ FixtureFinder.FixtureRetriever = {
            dataType: 'jsonp',
            success: function(json) {
                fixtures = json.fixtures;
-               FixtureParser.parseFixtures(fixtures, date, filter);
+               FixtureParser.parseFixtures(fixtures, filter, date);
            },
            error: function(json) {
                console.log(json.messages);
