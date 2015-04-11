@@ -24,6 +24,10 @@ FixtureFinder.initializer = function() {
         );
     };
 
+    var getFixturesForCurrentDate = function(){
+        getFixturesByDate(currentDateSelected)
+    };
+
     var filterCurrentFixtureList = function(){
         FixtureFinder.FixtureRetriever.getRetrievedFixtures(
             filterFixtures() 
@@ -32,10 +36,6 @@ FixtureFinder.initializer = function() {
 
     var addGetFixturesListener = function(selector, listenerType, handler) {
         $(selector)[listenerType](handler);
-    };
-
-    var getFixturesForCurrentDate = function(){
-        getFixturesByDate(currentDateSelected)
     };
     
     var addListeners = function() {

@@ -88,7 +88,7 @@ var localizer = function (){
         dateElement.text(
             moment(date || dateElement.attr('data-date'))
             .locale(lang)
-            .format('Do MMMM YYYY')
+            .format('ddd Do MMMM YYYY')
         );
     };
 
