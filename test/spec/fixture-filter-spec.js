@@ -6,6 +6,18 @@ describe("A Fixture Filter", function() {
     testFixtures = testFixtureData;
   });
 
+  describe("given undefined country and team", function() {
+    it("returns the identity for the given array", function() {
+        filter = FixtureFinder.FixtureFilter();
+
+        filtered = filter(testFixtures);
+
+        expect(filtered).toEqual(testFixtures);
+    });
+  });
+
+  
+
   describe("given all countries and blank team", function() {
     var filter;
 
