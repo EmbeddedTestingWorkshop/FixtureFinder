@@ -60,6 +60,10 @@
   display:block;
 }
 
+.fixtures .spinner{
+  display: none;
+}
+
 .fixtures .dateSelectNav {
   text-align: center;
   margin: 10px;
@@ -89,3 +93,4 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
