@@ -1,3 +1,4 @@
+// Password for admin on service server: jEHfi6$%usdfh678
 var FixtureRetriever = function(){
     var resortByColumn = function(){
         var sortedClass = 'sorttable_sorted';
