@@ -74,6 +74,10 @@
   width: 17.99%;
 }
 
+.fixtures .League{
+   margin: 10px;
+}
+
 .nextCoupon .input-sm {
   font-size: 10px;
 }
@@ -92,5 +96,9 @@
   background-image: url("../html/resources/stadium-background.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.fixtures .League::after { 
+    content: ".";
 }
 
