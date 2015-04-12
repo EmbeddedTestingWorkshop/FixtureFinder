@@ -80,7 +80,7 @@ var localizer = function (){
         $(headersClass+' .kickOffDate .txt').text(translator.kickOffDate);
         $(headersClass+' .home .txt').text(translator.home + " " + translator.team);
         $(headersClass+' .score .txt').text(translator.score);
-        $(headersClass+' .away .txt').text(translator.away + " " + translator.team);
+        $(headersClass+' .away .txt').text(translator.home + " " + translator.team);
     };
 
     var updateDate = function(lang, date){
