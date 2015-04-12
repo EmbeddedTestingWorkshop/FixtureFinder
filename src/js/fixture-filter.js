@@ -15,6 +15,7 @@ FixtureFinder.FixtureFilter = function(country, team){
     };
 
     return function(fixtures) {
-       return fixtures.filter(byCountry).filter(byTeam);
+        var filtered = fixtures.filter(byCountry).filter(byTeam);
+       return filtered.slice(0, filtered.length-1);
     }
 };
