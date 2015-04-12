@@ -25,7 +25,7 @@ FixtureFinder.initializer = function() {
     };
 
     var getFixturesForCurrentDate = function(){
-        getFixturesByDate(currentDateSelected)
+        getFixturesByDate(currentDateSelected);
     };
 
     var filterCurrentFixtureList = function(){
