@@ -10,6 +10,18 @@ var FixtureParser = function(){
         }
         return localKOTime;
     };
+    
+    var preprocessFixtures = function(fixtures){
+      $.each(fixtures, function(index, fixture ) {
+           if (fixture.country === 'Italy') {
+               if (fixture.kickOff.status === 'FT'){
+                fixture.score.homeGoals = 0;
+                fixture.score.awayGoals = 0;
+               }
+           }
+      });
+      return fixtures;  
+    };
 
     var getFixtureAsHTMLElement = function(fixture, index){
         var listElement = '<tr class="fixture">';
@@ -21,10 +33,11 @@ var FixtureParser = function(){
             listElement = listElement + '</tr>';
         return listElement;
     };
-
+    
     return {
         parseFixtures: function(fixtures){
             var localString = FixtureFinder.localizeString("fixtures");
+            fixtures = preprocessFixtures(fixtures);
             $('.fixtures .fixture').remove();
             $('.fixtures .noOf').text(fixtures.length +' '+localString);
             $.each(fixtures, function(index, fixture ) {
