@@ -9,7 +9,10 @@ var testFixtureData = new function(){
           },
           "homeTeam": "Manchester United",
           "awayTeam": "Arsenal",
-          "score": "1 - 2"
+          "score":{
+               "homeGoals":"1",
+               "awayGoals":"2"
+          }
         },
         {
           "country": "France",
@@ -20,7 +23,10 @@ var testFixtureData = new function(){
           },
           "homeTeam": "Arles-Avignon",
           "awayTeam": "Auxerre",
-          "score": "2 - 4"
+          "score":{
+               "homeGoals":"2",
+               "awayGoals":"4"
+          }
         },
         {
           "country": "Germany",
@@ -31,7 +37,10 @@ var testFixtureData = new function(){
           },
           "homeTeam": "Karlsruher SC",
           "awayTeam": "RasenBallsport Leipzig",
-          "score": "0 - 0"
+          "score":{
+               "homeGoals":"0",
+               "awayGoals":"0"
+          }
         },
         {
           "country": "Italy",
@@ -42,7 +51,10 @@ var testFixtureData = new function(){
           },
           "homeTeam": "Juventus",
           "awayTeam": "Sassuolo",
-          "score": "1 - 0"
+          "score":{
+               "homeGoals":"1",
+               "awayGoals":"0"
+          }
         },
         {
           "country": "Italy",
@@ -53,7 +65,10 @@ var testFixtureData = new function(){
           },
           "homeTeam": "Lazio",
           "awayTeam": "Fiorentina",
-          "score": "4 - 0"
+          "score":{
+               "homeGoals":"4",
+               "awayGoals":"0"
+          }
         }
     ];
 }

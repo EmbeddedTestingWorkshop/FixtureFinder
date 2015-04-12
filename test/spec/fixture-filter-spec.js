@@ -7,7 +7,7 @@ describe("A Fixture Filter", function() {
   });
 
   describe("given undefined country and team", function() {
-    it("returns the identity for the given array", function() {
+    it("will return the identity for the given array", function() {
         filter = FixtureFinder.FixtureFilter();
 
         filtered = filter(testFixtures);
@@ -16,12 +16,10 @@ describe("A Fixture Filter", function() {
     });
   });
 
-  
-
-  describe("given all countries and blank team", function() {
+  describe("given all countries and a blank team", function() {
     var filter;
 
-    it("returns the identity for the given array", function() {
+    it("will return the identity for the given array", function() {
         filter = FixtureFinder.FixtureFilter("all", "");
 
         filtered = filter(testFixtures);
@@ -29,19 +27,19 @@ describe("A Fixture Filter", function() {
         expect(filtered).toEqual(testFixtures);
     });
 
-    it("returns the identity for the given array", function() {
-            filter = FixtureFinder.FixtureFilter("all", "   ");
+    it("will return the identity for the given array", function() {
+        filter = FixtureFinder.FixtureFilter("all", "   ");
 
-            filtered = filter(testFixtures);
+        filtered = filter(testFixtures);
 
-            expect(filtered).toEqual(testFixtures);
+        expect(filtered).toEqual(testFixtures);
     });
   });
 
-  describe("given 'Italy' as country filter and blank team", function() {
+  describe("given 'Italy' as country filter and a blank team", function() {
     var filter;
 
-    it("returns the subset with only Italian fixtures", function() {
+    it("will return the subset with only Italian fixtures", function() {
       filter = FixtureFinder.FixtureFilter("Italy", "");
 
       filtered = filter(testFixtures);
@@ -55,7 +53,7 @@ describe("A Fixture Filter", function() {
     describe("and team Filter is 'A'", function() {
         var filter;
 
-        it("then the subset with only Teams with 'A' or 'a' are returned (in this case all)", function() {
+        it("will return the subset with only Teams with 'A' or 'a' (in this case all)", function() {
             filter = FixtureFinder.FixtureFilter("all", "A");
 
             filtered = filter(testFixtures);
@@ -67,7 +65,7 @@ describe("A Fixture Filter", function() {
     describe("and team Filter is 'al'", function() {
         var filter;
 
-        it("then the subset with only Teams with 'Al'(case insensitive) are returned", function() {
+        it("will return the subset with only Teams with 'Al' (case insensitive)", function() {
             filter = FixtureFinder.FixtureFilter("all", "Al");
 
             filtered = filter(testFixtures);
@@ -80,7 +78,7 @@ describe("A Fixture Filter", function() {
     describe("and team Filter is 'arsenal'", function() {
          var filter;
 
-        it("then the subset with only Teams with 'arsenal'(case insensitive) are returned", function() {
+        it("will return the subset with only Teams with 'arsenal' (case insensitive)", function() {
             filter = FixtureFinder.FixtureFilter("all", "arsenal");
 
             filtered = filter(testFixtures);
@@ -89,7 +87,7 @@ describe("A Fixture Filter", function() {
             expect(filtered).toEqual(expected);
         });
 
-        it("then the subset with only Teams with 'ARSENAL'(case insensitive) are returned", function() {
+        it("will return the subset with only Teams with 'ARSENAL' (case insensitive)", function() {
             filter = FixtureFinder.FixtureFilter("all", "ARsEnAL");
 
             filtered = filter(testFixtures);
@@ -102,7 +100,7 @@ describe("A Fixture Filter", function() {
     describe("and team Filter is 'zyzz'", function() {
         var filter;
 
-        it("then the subset with only Teams with 'Al'(case insensitive) are returned", function() {
+        it("will return an empty array", function() {
             filter = FixtureFinder.FixtureFilter("all", "zyzz");
 
             filtered = filter(testFixtures);

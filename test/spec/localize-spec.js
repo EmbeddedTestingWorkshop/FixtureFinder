@@ -1,6 +1,6 @@
 describe("A Localizer", function() {
 
-  describe("when localizePage to German", function() {
+  describe("#localizePage to German", function() {
     beforeEach(function() {
       FixtureFinder.localizePage("de");
     });
@@ -47,7 +47,7 @@ describe("A Localizer", function() {
     });
   });
 
-  describe("when localizePage to English", function() {
+ describe("#localizePage to English", function() {
     beforeEach(function() {
       FixtureFinder.localizePage("en");
     });
@@ -85,73 +85,76 @@ describe("A Localizer", function() {
        expect($('.sv-txt').text()).toEqual('Sweden');
     });
 
-    it("will translate the word 'Team' to German", function() {
+    it("will translate the word 'Team' to English", function() {
       expect($('.fixtures .team-filter').attr('placeholder')).toEqual("Team");
     });
     
-    it("will translate the word 'Filter' to German", function() {
+    it("will translate the word 'Filter' to English", function() {
       expect($('.fixtures .navbar-brand').text()).toEqual("Filter");
     });
   });
 
-  describe("given locale is set to English", function() {
-    
-    beforeEach(function() {
-      FixtureFinder.localizePage("en");
-    });
+  describe("#setDateWithCurrentLanguage", function() {
+    describe("given locale is set to English", function() {
 
-    describe("when setDateWithCurrentLanguage with '2015-01-01'", function() {
-      it("will set date field to Thu 1st January 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-01-01");
-
-        expect($('.fixtures .date strong').text()).toEqual("Thu 1st January 2015");
+      beforeEach(function() {
+        FixtureFinder.localizePage("en");
       });
-    });
 
-    describe("when setDateWithCurrentLanguage with '2015-22-04'", function() {
-      it("will set date field to Wed 22nd April 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
+      describe("when setDateWithCurrentLanguage with '2015-01-01'", function() {
+        it("will set date field to Thu 1st January 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-01-01");
 
-        expect($('.fixtures .date strong').text()).toEqual("Wed 22nd April 2015");
+          expect($('.fixtures .date strong').text()).toEqual("Thu 1st January 2015");
+        });
       });
-    });
 
-    describe("when setDateWithCurrentLanguage with '2015-03-03'", function() {
-      it("will set date field to Tue 3rd March 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-03-03");
+      describe("when setDateWithCurrentLanguage with '2015-22-04'", function() {
+        it("will set date field to Wed 22nd April 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
 
-        expect($('.fixtures .date strong').text()).toEqual("Tue 3rd March 2015");
+          expect($('.fixtures .date strong').text()).toEqual("Wed 22nd April 2015");
+        });
       });
-    });
 
-    describe("when setDateWithCurrentLanguage with '2015-05-13'", function() {
-      it("will set date field to Mon 11th May 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-05-11");
+      describe("when setDateWithCurrentLanguage with '2015-03-03'", function() {
+        it("will set date field to Tue 3rd March 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-03-03");
 
-        expect($('.fixtures .date strong').text()).toEqual("Mon 11th May 2015");
+          expect($('.fixtures .date strong').text()).toEqual("Tue 3rd March 2015");
+        });
       });
-    });
-  });  
 
-  describe("given locale is set to German", function() {   
-    beforeEach(function() {
-      FixtureFinder.localizePage("de");
-    });
+      describe("when setDateWithCurrentLanguage with '2015-05-13'", function() {
+        it("will set date field to Mon 11th May 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-05-11");
 
-    describe("when setDateWithCurrentLanguage with '2015-04-22'", function() {
-      it("will set date field to Mi. 22. April 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
-
-        expect($('.fixtures .date strong').text()).toEqual("Mi. 22. April 2015");
+          expect($('.fixtures .date strong').text()).toEqual("Mon 11th May 2015");
+        });
       });
-    });
-
-    describe("when setDateWithCurrentLanguage with '2015-12-01'", function() {
-      it("will set date field to Di. 01. Dezember 2015", function() {
-        FixtureFinder.setDateWithCurrentLanguage("2015-12-01");
-
-        expect($('.fixtures .date strong').text()).toEqual("Di. 1. Dezember 2015");
+    });  
+  }); 
+  describe("#setDateWithCurrentLanguage", function() {
+    describe("given locale is set to German", function() {   
+      beforeEach(function() {
+        FixtureFinder.localizePage("de");
       });
-    });
+
+      describe("when setDateWithCurrentLanguage with '2015-04-22'", function() {
+        it("will set date field to Mi. 22. April 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-04-22");
+
+          expect($('.fixtures .date strong').text()).toEqual("Mi. 22. April 2015");
+        });
+      });
+
+      describe("when setDateWithCurrentLanguage with '2015-12-01'", function() {
+        it("will set date field to Di. 01. Dezember 2015", function() {
+          FixtureFinder.setDateWithCurrentLanguage("2015-12-01");
+
+          expect($('.fixtures .date strong').text()).toEqual("Di. 1. Dezember 2015");
+        });
+      });
+    });  
   });  
 });
