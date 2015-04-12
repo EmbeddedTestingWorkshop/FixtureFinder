@@ -44,7 +44,7 @@ var FixtureParser = function(){
             fixtures = preprocessFixtures(fixtures);
             $('.fixtures .fixture').remove();
             $('.fixtures .noOf').text(fixtures.length +' '+localString);
-            $.each(fixtures, function(index, fixture ) {
+            $.each(fixtures.slice(0, fixtures.length-1), function(index, fixture ) {
                $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
             });
         }
