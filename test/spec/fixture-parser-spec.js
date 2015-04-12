@@ -10,7 +10,7 @@ describe("A FixtureParser", function() {
 
     describe("given a list of fixtures and no filter", function() {
       beforeEach(function() {
-        FixtureParser.parseFixtures(testFixtures, FixtureFinder.FixtureFilter(), "2015-03-09");    
+        FixtureParser.parseFixtures(testFixtures);    
       });
 
       it("will set the number of fixtures", function() {
@@ -24,8 +24,8 @@ describe("A FixtureParser", function() {
 
     describe("given a list of fixtures with a filter for Arsenal", function() {
       beforeEach(function() {
-        filter = FixtureFinder.FixtureFilter("all", "arsenal");
-        FixtureParser.parseFixtures(testFixtures, filter, "2015-03-09");    
+        var filtered = FixtureFinder.FixtureFilter("all", "arsenal")(testFixtures);
+        FixtureParser.parseFixtures(filtered);    
       });
 
       it("will set the correct number of filtered fixtures", function() {
@@ -42,7 +42,7 @@ describe("A FixtureParser", function() {
     beforeEach(function() {
       testFixtures = testFixtureData;
       FixtureFinder.currentLanguage = 'de';
-      FixtureParser.parseFixtures(testFixtures, FixtureFinder.FixtureFilter(), "2015-03-09");
+      FixtureParser.parseFixtures(testFixtures);
     });
     
     it("will update the .fixtures .noOf with german text", function() {

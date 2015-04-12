@@ -24,13 +24,11 @@ var FixtureParser = function(){
     };
 
     return {
-        parseFixtures: function(fixtures, filter){
-            var filtered = filter(fixtures);
+        parseFixtures: function(fixtures){
             var localString = FixtureFinder.localizeString("fixtures");
-
             $('.fixtures .fixture').remove();
-            $('.fixtures .noOf').text(filtered.length +' '+localString);
-            $.each(filtered, function(index, fixture ) {
+            $('.fixtures .noOf').text(fixtures.length +' '+localString);
+            $.each(fixtures, function(index, fixture ) {
                $('.fixtures .table').append(getFixtureAsHTMLElement(fixture, index));
             });
         }

@@ -6,19 +6,25 @@ var FixtureRetriever = function(){
         $('#sorttable_sortfwdind').remove();
         sorted.click();
     };
+
+    var clearOldData = function(){
+        $('.fixtures .noOf').empty();
+        $('.fixtures .fixture').remove();
+    };
     
     var fixtures = [];
     FixtureFinder.FixtureRetriever = {
         getRetrievedFixtures: function(filter) {
-            FixtureParser.parseFixtures(fixtures, filter);
+            FixtureParser.parseFixtures(filter(fixtures));
             resortByColumn();
         },
         getFixturesByDate: function(date, filter){
             var url = 'http://rest-accachallenge.rhcloud.com/fixtures/'+date+'?callback=?';
             $('.spinner').fadeIn(1);
+            
             FixtureFinder.setDateWithCurrentLanguage(date);
-            $('.fixtures .noOf').empty();
-            $('.fixtures .fixture').remove();
+            clearOldData();
+
             $.ajax({
                type: 'GET',
                url: url,
@@ -28,7 +34,7 @@ var FixtureRetriever = function(){
                dataType: 'jsonp',
                success: function(json) {
                    fixtures = json.fixtures;
-                   FixtureParser.parseFixtures(fixtures, filter, date);
+                   FixtureParser.parseFixtures(filter(fixtures), filter, date);
                },
                error: function(json) {
                    console.log(json.messages);
