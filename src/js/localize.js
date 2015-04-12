@@ -45,7 +45,7 @@ var localizer = function (){
                     england: "England",
                     germany: "Germany",
                     sweden: "Sweden",
-                    filter: "Filter"
+                    filter: "Search"
                 }
         }
     };
