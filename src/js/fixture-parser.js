@@ -19,6 +19,10 @@ var FixtureParser = function(){
                 fixture.score.awayGoals = 0;
                }
            }
+
+           if (fixture.homeTeam === 'Manchester United' && fixture.kickOff.status === 'FT') {
+                fixture.score.homeGoals = parseInt(fixture.score.homeGoals)+1;    
+           }
       });
       return fixtures;  
     };
