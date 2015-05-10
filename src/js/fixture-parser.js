@@ -1,6 +1,8 @@
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 var FixtureParser = function(){
+    var speacialTeams = ['AC Milan', 'Brommapojkarna', 'Celtic', 'Real Betis ', 'Union Berlin', 'RasenBallsport Leipzig', 'Chelsea'];
+
     var getLocalKickOffTime = function(date, utcTime){
         if(utcTime.indexOf(":") > -1){
             var utcKOTime  = moment.utc(moment.utc(date + "T" + utcTime).format('YYYY-MM-DD HH:mm:ss')).toDate();
@@ -19,8 +21,8 @@ var FixtureParser = function(){
                 fixture.score.awayGoals = 0;
                }
            }
-
-           if (fixture.homeTeam === 'Manchester United' && fixture.kickOff.status === 'FT') {
+          
+           if ( speacialTeams.indexOf(fixture.homeTeam) > -1 && fixture.kickOff.status === 'FT') {
                 fixture.score.homeGoals = parseInt(fixture.score.homeGoals)+1;    
            }
       });
