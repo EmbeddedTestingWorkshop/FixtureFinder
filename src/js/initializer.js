@@ -6,14 +6,14 @@ FixtureFinder.initializer = function() {
     var dateFormat = "YYYY-MM-DD";
     var currentDateSelected = moment().format(dateFormat);
     var countryFilterSelector = '.fixtures input[name=country]';
-    var teamFilterInput = $('.fixtures .team-filter');
-    var dateSelectButtons = $('.fixtures .dateSelect');
-    var localizeButtons = $('.localize input[type="radio"]');
+    var teamFilterInput = '.fixtures .team-filter';
+    var dateSelectButtons = '.fixtures .dateSelect';
+    var localizeButtons = '.localize input[type="radio"]';
     
     var filterFixtures = function() {
         return FixtureFinder.FixtureFilter(
                 $(countryFilterSelector + ':checked')[0].id,
-                teamFilterInput[0].value
+                $(teamFilterInput)[0].value
             )
     };
 
@@ -41,7 +41,7 @@ FixtureFinder.initializer = function() {
     var addListeners = function() {
         addGetFixturesListener(teamFilterInput, 'keyup', filterCurrentFixtureList);
         addGetFixturesListener(countryFilterSelector, 'click', filterCurrentFixtureList);
-        addGetFixturesListener(dateSelectButtons, 'click',
+        addGetFixturesListener($(dateSelectButtons), 'click',
             function(){
                 var offset = this.getAttribute('data-offset');
                 if(offset === "0"){
@@ -52,7 +52,7 @@ FixtureFinder.initializer = function() {
                 getFixturesForCurrentDate();
             }
         );
-        addGetFixturesListener(localizeButtons, 'click',
+        addGetFixturesListener($(localizeButtons), 'click',
             function(){ FixtureFinder.localizePage(this.value) }
         );
     };
