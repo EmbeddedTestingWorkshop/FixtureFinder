@@ -24,29 +24,6 @@ var localizer = function (){
                     filter: "Filtern"
             }
             
-            case "sv":
-            case "swedish":
-                return {
-                    firstNavBtn: "Föregående vecka",
-                    secondNavBtn: "Föregående dag",
-                    thirdNavBtn: "i dag",
-                    fourthNavBtn: "Nästa Dag",
-                    fifthNavBtn: "Nästa Vecka",
-                    competition: "Konkurrens",
-                    kickOffDate: "Kick Off",
-                    home: "Hemma",
-                    score: "Betyg",
-                    away: "Borta",
-                    team: "Lag",
-                    fixtures: "fixturer",
-                    all: "Alla",
-                    countries: "Länder",
-                    england: "England",
-                    germany: "Tyskland",
-                    sweden: "Sverige",
-                    filter: "Filtera"
-                }
-            
             case "en":
             case "english":
             default:
