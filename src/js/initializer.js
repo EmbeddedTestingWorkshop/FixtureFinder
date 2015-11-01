@@ -5,9 +5,9 @@ var FixtureFinder = {
 FixtureFinder.initializer = function() {
     var dateFormat = "YYYY-MM-DD";
     var currentDateSelected = moment().format(dateFormat);
-    var countryFilterSelector = '.fixtures input[name=country]';
-    var teamFilterInput = '.fixtures .team-filter';
-    var dateSelectButtons = '.fixtures .dateSelect';
+    var countryFilterSelector = 'input[name=country]';
+    var teamFilterInput = '.team-filter';
+    var dateSelectButtons = '.dateSelect';
     var localizeButtons = '.localize input[type="radio"]';
     
     var filterFixtures = function() {
@@ -41,7 +41,7 @@ FixtureFinder.initializer = function() {
     var addListeners = function() {
         addGetFixturesListener(teamFilterInput, 'keyup', filterCurrentFixtureList);
         addGetFixturesListener(countryFilterSelector, 'click', filterCurrentFixtureList);
-        addGetFixturesListener($(dateSelectButtons), 'click',
+        addGetFixturesListener(dateSelectButtons, 'click',
             function(){
                 var offset = this.getAttribute('data-offset');
                 if(offset === "0"){
