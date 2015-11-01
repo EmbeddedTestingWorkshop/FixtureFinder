@@ -47,54 +47,7 @@ describe("A Localizer", function() {
     });
   });
 
- describe("#localizePage to Swedish", function() {
-    beforeEach(function() {
-      FixtureFinder.localizePage("sv");
-    });
-
-    it("will translate the nav buttons to Swedish", function() {
-      expect($($('.dateSelectNav').children()[0]).text()).toEqual("Föregående vecka");
-      expect($($('.dateSelectNav').children()[1]).text()).toEqual("Föregående dag");
-      expect($($('.dateSelectNav').children()[2]).text()).toEqual("i dag");
-      expect($($('.dateSelectNav').children()[3]).text()).toEqual("Nästa Dag");
-      expect($($('.dateSelectNav').children()[4]).text()).toEqual("Nästa Vecka");
-    });
-
-    it("will translate the table headers to Swedish", function() {
-      var headersClass = '.table .headers'
-      expect($(headersClass+' .competition .txt').text()).toEqual("Konkurrens");
-      expect($(headersClass+' .kickOffDate .txt').text()).toEqual("Kick Off");
-      expect($(headersClass+' .home .txt').text()).toEqual("Hemma Lag");
-      expect($(headersClass+' .score .txt').text()).toEqual("Betyg");
-      expect($(headersClass+' .away .txt').text()).toEqual("Borta Lag");
-    });
-
-    it("will translate the date to Swedish format", function() {
-      expect($('.fixtures .date strong').text()).toEqual("mån 9e mars 2015");
-    });
-
-    it("will translate the word results to Swedish", function() {
-      expect($('.fixtures .noOf').text()).toEqual("5 fixturer");
-    });
-
-    it("will translate the all country names, inc 'All Countries' to Swedish", function() {
-       expect($('.all-txt')[0].innerHTML).toEqual('Alla Länder');
-       expect($('.all-txt')[1].innerHTML).toEqual('Alla Länder');
-       expect($('.en-txt').text()).toEqual('England');
-       expect($('.de-txt').text()).toEqual('Tyskland');
-       expect($('.sv-txt').text()).toEqual('Sverige');
-    });
-
-    it("will translate the word 'Team' to Swedish", function() {
-      expect($('.fixtures .team-filter').attr('placeholder')).toEqual("Lag");
-    });
-    
-    it("will translate the word 'Filter' to Swedish", function() {
-      expect($('.fixtures .navbar-brand').text()).toEqual("Filtera");
-    });
- });
-
- describe("#localizePage to English", function() {
+describe("#localizePage to English", function() {
     beforeEach(function() {
       FixtureFinder.localizePage("en");
     });
