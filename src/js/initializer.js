@@ -52,7 +52,7 @@ FixtureFinder.initializer = function() {
                 getFixturesForCurrentDate();
             }
         );
-        addGetFixturesListener($(localizeButtons), 'click',
+        addGetFixturesListener(localizeButtons, 'click',
             function(){ FixtureFinder.localizePage(this.value) }
         );
     };
