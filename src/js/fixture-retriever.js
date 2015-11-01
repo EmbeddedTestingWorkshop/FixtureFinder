@@ -1,3 +1,4 @@
+// Admin password service server: PtmKbnhBzA_Yc8Wu
 var FixtureRetriever = function(){
     var resortByColumn = function(){
         var sortedClass = 'sorttable_sorted';
