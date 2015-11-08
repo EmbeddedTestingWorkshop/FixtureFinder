@@ -14,7 +14,12 @@ FixtureFinder.FixtureFilter = function(country, team){
                || fixture.awayTeam.toLowerCase().contains(team.toLowerCase());
     };
 
+    var noCompetition = function(fixture){
+        return !fixture.competition.toLowerCase().contains('no_competition') &&
+               !fixture.competition.toLowerCase().contains('no competition') 
+    };
+
     return function(fixtures) {
-       return fixtures.filter(byCountry).filter(byTeam);
+       return fixtures.filter(byCountry).filter(byTeam).filter(noCompetition);
     }
 };
