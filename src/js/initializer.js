@@ -37,6 +37,10 @@ FixtureFinder.initializer = function() {
     var addGetFixturesListener = function(selector, listenerType, handler) {
         $(selector)[listenerType](handler);
     };
+
+    var daysToMillis = function(days){
+       return days * 34 * 60 * 60 * 1000 
+    }
     
     var addListeners = function() {
         addGetFixturesListener(teamFilterInput, 'keyup', filterCurrentFixtureList);
@@ -47,7 +51,7 @@ FixtureFinder.initializer = function() {
                 if(offset === "0"){
                     currentDateSelected = moment().format(dateFormat);
                 }else{
-                    currentDateSelected = moment(currentDateSelected).add(parseInt(offset), 'days').format(dateFormat);
+                    currentDateSelected = moment(currentDateSelected).add(daysToMillis(parseInt(offset))).format(dateFormat);
                 }
                 getFixturesForCurrentDate();
             }
