@@ -10,8 +10,8 @@ FixtureFinder.FixtureFilter = function(country, team){
 
     team = team.trim();
     var byTeam = function(fixture){
-        return fixture.homeTeam.toLowerCase().contains(team.toLowerCase())
-               || fixture.awayTeam.toLowerCase().contains(team.toLowerCase());
+        return fixture.homeTeam.toLowerCase().contains(team)
+               || fixture.awayTeam.contains(team);
     };
 
     var noCompetition = function(fixture){

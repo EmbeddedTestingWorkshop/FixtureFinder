@@ -4,7 +4,7 @@ var FixtureFinder = {
 
 FixtureFinder.initializer = function() {
     var dateFormat = "YYYY-MM-DD";
-    var currentDateSelected = moment().format(dateFormat);
+    var currentDateSelected = moment();
     var countryFilterSelector = 'input[name=country]';
     var teamFilterInput = '.team-filter';
     var dateSelectButtons = '.dateSelect';
@@ -25,7 +25,7 @@ FixtureFinder.initializer = function() {
     };
 
     var getFixturesForCurrentDate = function(){
-        getFixturesByDate(currentDateSelected);
+        getFixturesByDate(currentDateSelected.format(dateFormat));
     };
 
     var filterCurrentFixtureList = function(){
@@ -39,7 +39,7 @@ FixtureFinder.initializer = function() {
     };
 
     var daysToMillis = function(days){
-       return days * 34 * 60 * 60 * 1000 
+       return days * 25 * 60 * 60 * 1000 
     }
     
     var addListeners = function() {
@@ -49,9 +49,9 @@ FixtureFinder.initializer = function() {
             function(){
                 var offset = this.getAttribute('data-offset');
                 if(offset === "0"){
-                    currentDateSelected = moment().format(dateFormat);
+                    currentDateSelected = moment();
                 }else{
-                    currentDateSelected = moment(currentDateSelected).add(daysToMillis(parseInt(offset))).format(dateFormat);
+                    currentDateSelected = moment(currentDateSelected).add(daysToMillis(parseInt(offset)));
                 }
                 getFixturesForCurrentDate();
             }
