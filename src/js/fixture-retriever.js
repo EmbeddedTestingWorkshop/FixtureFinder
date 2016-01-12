@@ -20,7 +20,7 @@ var FixtureRetriever = function(){
             resortByColumn();
         },
         getFixturesByDate: function(date, filter){
-            var url = 'http://rest-accachallenge.rhcloud.com/fixtures/'+date+'?callback=?';
+            var url = 'http://fixturefinder.herokuapp.com/fixtures/'+date+'?callback=?';
             $('.spinner').fadeIn(1000);
             
             FixtureFinder.setDateWithCurrentLanguage(date);
