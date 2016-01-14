@@ -1,6 +1,7 @@
 describe("A Fixture Filter", function() {
   var testFixtures;
   var filtered;
+  var allCountries = 'All Countries';
 
   beforeEach(function() {
     testFixtures = testFixtureData;
@@ -20,7 +21,7 @@ describe("A Fixture Filter", function() {
     var filter;
 
     it("will return the identity for the given array", function() {
-        filter = FixtureFinder.FixtureFilter("all", "");
+        filter = FixtureFinder.FixtureFilter(allCountries, "");
 
         filtered = filter(testFixtures);
 
@@ -28,7 +29,7 @@ describe("A Fixture Filter", function() {
     });
 
     it("will return the identity for the given array", function() {
-        filter = FixtureFinder.FixtureFilter("all", "   ");
+        filter = FixtureFinder.FixtureFilter(allCountries, "   ");
 
         filtered = filter(testFixtures);
 
@@ -54,7 +55,7 @@ describe("A Fixture Filter", function() {
         var filter;
 
         it("will return the subset with only Teams with 'A' or 'a' (in this case all)", function() {
-            filter = FixtureFinder.FixtureFilter("all", "A");
+            filter = FixtureFinder.FixtureFilter(allCountries, "A");
 
             filtered = filter(testFixtures);
 
@@ -66,7 +67,7 @@ describe("A Fixture Filter", function() {
         var filter;
 
         it("will return the subset with only Teams with 'Al' (case insensitive)", function() {
-            filter = FixtureFinder.FixtureFilter("all", "Al");
+            filter = FixtureFinder.FixtureFilter(allCountries, "Al");
 
             filtered = filter(testFixtures);
 
@@ -79,7 +80,7 @@ describe("A Fixture Filter", function() {
          var filter;
 
         it("will return the subset with only Teams with 'arsenal' (case insensitive)", function() {
-            filter = FixtureFinder.FixtureFilter("all", "arsenal");
+            filter = FixtureFinder.FixtureFilter(allCountries, "arsenal");
 
             filtered = filter(testFixtures);
 
@@ -88,7 +89,7 @@ describe("A Fixture Filter", function() {
         });
 
         it("will return the subset with only Teams with 'ARSENAL' (case insensitive)", function() {
-            filter = FixtureFinder.FixtureFilter("all", "ARsEnAL");
+            filter = FixtureFinder.FixtureFilter(allCountries, "ARsEnAL");
 
             filtered = filter(testFixtures);
 
@@ -101,7 +102,7 @@ describe("A Fixture Filter", function() {
         var filter;
 
         it("will return an empty array", function() {
-            filter = FixtureFinder.FixtureFilter("all", "zyzz");
+            filter = FixtureFinder.FixtureFilter(allCountries, "zyzz");
 
             filtered = filter(testFixtures);
 
