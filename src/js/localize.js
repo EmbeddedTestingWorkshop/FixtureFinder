@@ -9,7 +9,7 @@ var localizer = function (){
                     thirdNavBtn: "Heute",
                     fourthNavBtn: "Nächster Tag",
                     fifthNavBtn: "Naechste Woche",
-                    competition: "Wetlbewerb",
+                    competition: "Competition",
                     kickOffDate: "Anstoß",
                     home: "Home",
                     score: "Ergebnis",
