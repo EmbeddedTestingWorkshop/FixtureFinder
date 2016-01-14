@@ -12,7 +12,7 @@ FixtureFinder.initializer = function() {
     
     var filterFixtures = function() {
         return FixtureFinder.FixtureFilter(
-                $(countryFilterSelector + ':checked')[0].id,
+					$(countryFilterSelector + ':checked').parent().text().trim(),
                 $(teamFilterInput)[0].value
             )
     };
