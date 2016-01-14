@@ -114,6 +114,6 @@ var localizer = function (){
     };
 
     FixtureFinder.setDateWithCurrentLanguage = function(date){
-        updateDate(FixtureFinder.currentLanguage, date);
+        updateDate('en', date);
     }
 }()
