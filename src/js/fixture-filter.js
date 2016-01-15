@@ -1,8 +1,7 @@
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 FixtureFinder.FixtureFilter = function(country, team){
-
-    var allCountries = 'All Countries';
+    var allCountries = 'all';
     if(!country) country = allCountries;
     if(!team) team = '';
 

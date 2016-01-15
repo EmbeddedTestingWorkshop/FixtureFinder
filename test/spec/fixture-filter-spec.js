@@ -1,7 +1,7 @@
 describe("A Fixture Filter", function() {
   var testFixtures;
   var filtered;
-  var allCountries = 'All Countries';
+  var allCountries = 'all';
 
   beforeEach(function() {
     testFixtures = testFixtureData;
